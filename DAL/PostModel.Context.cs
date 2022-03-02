@@ -31,7 +31,7 @@ namespace DAL
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<FavLogoTitle> FavLogoTitles { get; set; }
-        public DbSet<Long_Table> Long_Table { get; set; }
+        public DbSet<Log_Table> Log_Table { get; set; }
         public DbSet<Meta> Metas { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostImage> PostImages { get; set; }

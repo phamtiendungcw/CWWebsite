@@ -100,7 +100,7 @@
           <Property Name="LastUpdateUserID" Type="int" Nullable="false" />
           <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
         </EntityType>
-        <EntityType Name="Long_Table">
+        <EntityType Name="Log_Table">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -109,7 +109,7 @@
           <Property Name="IPAddress" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="ProcessID" Type="int" Nullable="false" />
           <Property Name="ProcessType" Type="int" Nullable="false" />
-          <Property Name="ProcessCategoryType" Type="int" Nullable="false" />
+          <Property Name="ProcessCategoryType" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ProcessDate" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Meta">
@@ -324,24 +324,24 @@
         </Association>
         <Association Name="FK_Long_Table_ProcessType">
           <End Role="ProcessType" Type="Self.ProcessType" Multiplicity="1" />
-          <End Role="Long_Table" Type="Self.Long_Table" Multiplicity="*" />
+          <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProcessType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Long_Table">
+            <Dependent Role="Log_Table">
               <PropertyRef Name="ProcessType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Long_Table_T_User">
           <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
-          <End Role="Long_Table" Type="Self.Long_Table" Multiplicity="*" />
+          <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="T_User">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Long_Table">
+            <Dependent Role="Log_Table">
               <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
@@ -461,7 +461,7 @@
           <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FavLogoTitle" EntityType="Self.FavLogoTitle" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Long_Table" EntityType="Self.Long_Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log_Table" EntityType="Self.Log_Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Meta" EntityType="Self.Meta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PostImage" EntityType="Self.PostImage" Schema="dbo" store:Type="Tables" />
@@ -501,11 +501,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_Long_Table_ProcessType" Association="Self.FK_Long_Table_ProcessType">
             <End Role="ProcessType" EntitySet="ProcessType" />
-            <End Role="Long_Table" EntitySet="Long_Table" />
+            <End Role="Log_Table" EntitySet="Log_Table" />
           </AssociationSet>
           <AssociationSet Name="FK_Long_Table_T_User" Association="Self.FK_Long_Table_T_User">
             <End Role="T_User" EntitySet="T_User" />
-            <End Role="Long_Table" EntitySet="Long_Table" />
+            <End Role="Log_Table" EntitySet="Log_Table" />
           </AssociationSet>
           <AssociationSet Name="FK_Meta_T_User" Association="Self.FK_Meta_T_User">
             <End Role="T_User" EntitySet="T_User" />
@@ -652,7 +652,7 @@
           <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="T_User" Relationship="Self.FK_FavLogoTitle_T_User" FromRole="FavLogoTitle" ToRole="T_User" />
         </EntityType>
-        <EntityType Name="Long_Table">
+        <EntityType Name="Log_Table">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -661,10 +661,10 @@
           <Property Name="IPAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProcessID" Type="Int32" Nullable="false" />
           <Property Name="ProcessType" Type="Int32" Nullable="false" />
-          <Property Name="ProcessCategoryType" Type="Int32" Nullable="false" />
+          <Property Name="ProcessCategoryType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProcessDate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="ProcessType1" Relationship="Self.FK_Long_Table_ProcessType" FromRole="Long_Table" ToRole="ProcessType" />
-          <NavigationProperty Name="T_User" Relationship="Self.FK_Long_Table_T_User" FromRole="Long_Table" ToRole="T_User" />
+          <NavigationProperty Name="ProcessType1" Relationship="Self.FK_Long_Table_ProcessType" FromRole="Log_Table" ToRole="ProcessType" />
+          <NavigationProperty Name="T_User" Relationship="Self.FK_Long_Table_T_User" FromRole="Log_Table" ToRole="T_User" />
         </EntityType>
         <EntityType Name="Meta">
           <Key>
@@ -745,7 +745,7 @@
           </Key>
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProcessName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Long_Table" Relationship="Self.FK_Long_Table_ProcessType" FromRole="ProcessType" ToRole="Long_Table" />
+          <NavigationProperty Name="Log_Table" Relationship="Self.FK_Long_Table_ProcessType" FromRole="ProcessType" ToRole="Log_Table" />
         </EntityType>
         <EntityType Name="SocialMedia">
           <Key>
@@ -794,7 +794,7 @@
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_T_User" FromRole="T_User" ToRole="Comment" />
           <NavigationProperty Name="Contacts" Relationship="Self.FK_Contact_T_User" FromRole="T_User" ToRole="Contact" />
           <NavigationProperty Name="FavLogoTitles" Relationship="Self.FK_FavLogoTitle_T_User" FromRole="T_User" ToRole="FavLogoTitle" />
-          <NavigationProperty Name="Long_Table" Relationship="Self.FK_Long_Table_T_User" FromRole="T_User" ToRole="Long_Table" />
+          <NavigationProperty Name="Log_Table" Relationship="Self.FK_Long_Table_T_User" FromRole="T_User" ToRole="Log_Table" />
           <NavigationProperty Name="Metas" Relationship="Self.FK_Meta_T_User" FromRole="T_User" ToRole="Meta" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_Post_T_User" FromRole="T_User" ToRole="Post" />
           <NavigationProperty Name="PostImages" Relationship="Self.FK_PostImage_T_User" FromRole="T_User" ToRole="PostImage" />
@@ -916,24 +916,24 @@
         </Association>
         <Association Name="FK_Long_Table_ProcessType">
           <End Role="ProcessType" Type="Self.ProcessType" Multiplicity="1" />
-          <End Role="Long_Table" Type="Self.Long_Table" Multiplicity="*" />
+          <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProcessType">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Long_Table">
+            <Dependent Role="Log_Table">
               <PropertyRef Name="ProcessType" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Long_Table_T_User">
           <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
-          <End Role="Long_Table" Type="Self.Long_Table" Multiplicity="*" />
+          <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="T_User">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="Long_Table">
+            <Dependent Role="Log_Table">
               <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
@@ -1041,7 +1041,7 @@
           <EntitySet Name="Comments" EntityType="Self.Comment" />
           <EntitySet Name="Contacts" EntityType="Self.Contact" />
           <EntitySet Name="FavLogoTitles" EntityType="Self.FavLogoTitle" />
-          <EntitySet Name="Long_Table" EntityType="Self.Long_Table" />
+          <EntitySet Name="Log_Table" EntityType="Self.Log_Table" />
           <EntitySet Name="Metas" EntityType="Self.Meta" />
           <EntitySet Name="Posts" EntityType="Self.Post" />
           <EntitySet Name="PostImages" EntityType="Self.PostImage" />
@@ -1085,11 +1085,11 @@
           </AssociationSet>
           <AssociationSet Name="FK_Long_Table_ProcessType" Association="Self.FK_Long_Table_ProcessType">
             <End Role="ProcessType" EntitySet="ProcessTypes" />
-            <End Role="Long_Table" EntitySet="Long_Table" />
+            <End Role="Log_Table" EntitySet="Log_Table" />
           </AssociationSet>
           <AssociationSet Name="FK_Long_Table_T_User" Association="Self.FK_Long_Table_T_User">
             <End Role="T_User" EntitySet="T_User" />
-            <End Role="Long_Table" EntitySet="Long_Table" />
+            <End Role="Log_Table" EntitySet="Log_Table" />
           </AssociationSet>
           <AssociationSet Name="FK_Meta_T_User" Association="Self.FK_Meta_T_User">
             <End Role="T_User" EntitySet="T_User" />
@@ -1231,9 +1231,9 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Long_Table">
-            <EntityTypeMapping TypeName="POSTDATAModel.Long_Table">
-              <MappingFragment StoreEntitySet="Long_Table">
+          <EntitySetMapping Name="Log_Table">
+            <EntityTypeMapping TypeName="POSTDATAModel.Log_Table">
+              <MappingFragment StoreEntitySet="Log_Table">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />

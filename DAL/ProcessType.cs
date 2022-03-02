@@ -16,12 +16,12 @@ namespace DAL
     {
         public ProcessType()
         {
-            this.Long_Table = new HashSet<Long_Table>();
+            this.Log_Table = new HashSet<Log_Table>();
         }
     
         public int ID { get; set; }
         public string ProcessName { get; set; }
     
-        public virtual ICollection<Long_Table> Long_Table { get; set; }
+        public virtual ICollection<Log_Table> Log_Table { get; set; }
     }
 }

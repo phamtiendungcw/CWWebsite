@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d8c012f1e3f54bc6b6a7957ec3a42935" Name="Diagram1">
+      <Diagram DiagramId="2de5a14a48dc4dc2bcb27ded3714f0f0" Name="Diagram1">
         <EntityTypeShape EntityType="POSTDATAModel.Address" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.Ad" Width="1.5" PointX="3" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.Category" Width="1.5" PointX="3" PointY="17.25" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.Comment" Width="1.5" PointX="7.5" PointY="20.25" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.Contact" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.FavLogoTitle" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="POSTDATAModel.Long_Table" Width="1.5" PointX="6" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="POSTDATAModel.Log_Table" Width="1.5" PointX="6" PointY="25.75" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.Meta" Width="1.5" PointX="3" PointY="32.5" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.Post" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
         <EntityTypeShape EntityType="POSTDATAModel.PostImage" Width="1.5" PointX="10.5" PointY="21.75" IsExpanded="true" />

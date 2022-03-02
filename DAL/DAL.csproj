@@ -40,6 +40,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,7 +67,8 @@
     <Compile Include="FavLogoTitle.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Long_Table.cs">
+    <Compile Include="LogDAO.cs" />
+    <Compile Include="Log_Table.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Meta.cs">
@@ -122,32 +124,30 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
     <EntityDeploy Include="PostModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PostModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
-    <None Include="packages.config" />
     <None Include="PostModel.edmx.diagram">
       <DependentUpon>PostModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="PostModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PostModel.Context.cs</LastGenOutput>
       <DependentUpon>PostModel.edmx</DependentUpon>
+      <LastGenOutput>PostModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="PostModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PostModel.edmx</DependentUpon>
       <LastGenOutput>PostModel.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

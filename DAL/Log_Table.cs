@@ -12,14 +12,14 @@ namespace DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class Long_Table
+    public partial class Log_Table
     {
         public int ID { get; set; }
         public int UserID { get; set; }
         public string IPAddress { get; set; }
         public int ProcessID { get; set; }
         public int ProcessType { get; set; }
-        public int ProcessCategoryType { get; set; }
+        public string ProcessCategoryType { get; set; }
         public System.DateTime ProcessDate { get; set; }
     
         public virtual ProcessType ProcessType1 { get; set; }

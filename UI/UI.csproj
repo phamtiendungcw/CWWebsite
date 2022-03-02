@@ -93,7 +93,10 @@
     <Content Include="Areas\Admin\Content\CSS\icheck-bootstrap.min.css" />
     <Content Include="Areas\Admin\Content\JS\adminlte.min.js" />
     <Content Include="Areas\Admin\Content\JS\bootstrap.bundle.min.js" />
+    <Content Include="Areas\Admin\Content\JS\demo.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.min.js" />
+    <Content Include="Areas\Admin\Content\tempimage\Logo.png" />
+    <Content Include="Areas\Admin\Content\tempimage\user8-128x128.jpg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.svg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-regular-400.svg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-solid-900.svg" />
@@ -114,8 +117,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.eot" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.ttf" />
@@ -129,6 +130,7 @@
     <Content Include="Areas\Admin\Content\webfonts\fa-solid-900.ttf" />
     <Content Include="Areas\Admin\Content\webfonts\fa-solid-900.woff" />
     <Content Include="Areas\Admin\Content\webfonts\fa-solid-900.woff2" />
+    <Content Include="Areas\Admin\Views\Shared\AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
