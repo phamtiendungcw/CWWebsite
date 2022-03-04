@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MetaDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="UserStatic.cs" />
