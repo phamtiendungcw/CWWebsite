@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using BLL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,25 @@ namespace UI.Areas.Admin.Controllers
             return View();
         }
 
+        MetaBLL bll = new MetaBLL();
         public ActionResult AddMeta()
         {
             MetaDTO dto = new MetaDTO();
             return View(dto);
+        }
+
+        [HttpPost]
+        public ActionResult AddMeta(MetaDTO model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (bll.AddMeta(model))
+                {
+                    ModelState.Clear();
+                }
+            }
+            MetaDTO newmodel = new MetaDTO();
+            return View(newmodel);
         }
     }
 }

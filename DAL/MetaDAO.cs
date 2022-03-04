@@ -8,6 +8,19 @@ namespace DAL
 {
     public class MetaDAO : PostContext
     {
-
+        public int AddMeta(Meta meta)
+        {
+            try
+            {
+                db.Metas.Add(meta);
+                db.SaveChanges();
+                return meta.ID;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }
