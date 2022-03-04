@@ -30,8 +30,17 @@ namespace UI.Areas.Admin.Controllers
             {
                 if (bll.AddMeta(model))
                 {
+                    ViewBag.ProcessState = General.Messages.AddSuccess;
                     ModelState.Clear();
                 }
+                else
+                {
+                    ViewBag.ProcessState = General.Messages.GeneralError;
+                }
+            }
+            else
+            {
+                ViewBag.ProcessState = General.Messages.EmptyArea;
             }
             MetaDTO newmodel = new MetaDTO();
             return View(newmodel);

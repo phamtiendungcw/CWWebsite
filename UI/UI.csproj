@@ -135,6 +135,7 @@
     <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\AddMeta.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\Partial\MetaForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\MessageForm.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
