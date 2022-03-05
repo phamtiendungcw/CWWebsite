@@ -38,5 +38,32 @@ namespace DAL
             }
             return metalist;
         }
+
+        public MetaDTO GetMetaWithID(int ID)
+        {
+            Meta meta = db.Metas.First(x => x.ID == ID);
+            MetaDTO dto = new MetaDTO();
+            dto.MetaID = meta.ID;
+            dto.Name = meta.Name;
+            dto.MetaContent = meta.MetaContent;
+            return dto;
+        }
+
+        public void UpdateMeta(MetaDTO model)
+        {
+            try
+            {
+                Meta meta = db.Metas.First(x => x.ID == model.MetaID);
+                meta.Name = model.Name;
+                meta.MetaContent = model.MetaContent;
+                meta.LastUpdateDate = DateTime.Now;
+                meta.LastUpdateUserID = UserStatic.UserID;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

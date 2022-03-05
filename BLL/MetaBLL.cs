@@ -31,5 +31,19 @@ namespace BLL
             dtolist = dao.GetMetaData();
             return dtolist;
         }
+
+        public MetaDTO GetMetaWithID(int ID)
+        {
+            MetaDTO metadto = new MetaDTO();
+            metadto = dao.GetMetaWithID(ID);
+            return metadto;
+        }
+
+        public bool UpdateMeta(MetaDTO model)
+        {
+            dao.UpdateMeta(model);
+            LogDAO.AddLog(General.ProcessType.MetaUpdate, General.TableName.Meta, model.MetaID);
+            return true;
+        }
     }
 }

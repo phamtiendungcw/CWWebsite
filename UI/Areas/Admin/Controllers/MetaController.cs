@@ -34,14 +34,10 @@ namespace UI.Areas.Admin.Controllers
                     ModelState.Clear();
                 }
                 else
-                {
                     ViewBag.ProcessState = General.Messages.GeneralError;
-                }
             }
             else
-            {
                 ViewBag.ProcessState = General.Messages.EmptyArea;
-            }
             MetaDTO newmodel = new MetaDTO();
             return View(newmodel);
         }
@@ -49,6 +45,27 @@ namespace UI.Areas.Admin.Controllers
         {
             List<MetaDTO> model = new List<MetaDTO>();
             model = bll.GetMetaData();
+            return View(model);
+        }
+
+        public ActionResult UpdateMeta(int ID)
+        {
+            MetaDTO model = new MetaDTO();
+            model = bll.GetMetaWithID(ID);
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult UpdateMeta(MetaDTO model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (bll.UpdateMeta(model))
+                    ViewBag.ProcessState = General.Messages.UpdateSuccess;
+                else
+                    ViewBag.ProcessState = General.Messages.GeneralError;
+            }
+            else
+                ViewBag.ProcessState = General.Messages.EmptyArea;
             return View(model);
         }
     }
