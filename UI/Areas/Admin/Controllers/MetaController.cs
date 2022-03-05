@@ -45,5 +45,11 @@ namespace UI.Areas.Admin.Controllers
             MetaDTO newmodel = new MetaDTO();
             return View(newmodel);
         }
+        public ActionResult MetaList()
+        {
+            List<MetaDTO> model = new List<MetaDTO>();
+            model = bll.GetMetaData();
+            return View(model);
+        }
     }
 }

@@ -90,11 +90,19 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Content\CSS\adminlte.min.css" />
     <Content Include="Areas\Admin\Content\CSS\all.min.css" />
+    <Content Include="Areas\Admin\Content\CSS\dataTables.bootstrap4.min.css" />
     <Content Include="Areas\Admin\Content\CSS\icheck-bootstrap.min.css" />
+    <Content Include="Areas\Admin\Content\CSS\responsive.bootstrap4.min.css" />
+    <Content Include="Areas\Admin\Content\icons\Delete.ico" />
+    <Content Include="Areas\Admin\Content\icons\Update.ico" />
     <Content Include="Areas\Admin\Content\JS\adminlte.min.js" />
     <Content Include="Areas\Admin\Content\JS\bootstrap.bundle.min.js" />
+    <Content Include="Areas\Admin\Content\JS\dataTables.bootstrap4.min.js" />
+    <Content Include="Areas\Admin\Content\JS\dataTables.responsive.min.js" />
     <Content Include="Areas\Admin\Content\JS\demo.js" />
+    <Content Include="Areas\Admin\Content\JS\jquery.dataTables.min.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.min.js" />
+    <Content Include="Areas\Admin\Content\JS\responsive.bootstrap4.min.js" />
     <Content Include="Areas\Admin\Content\tempimage\Logo.png" />
     <Content Include="Areas\Admin\Content\tempimage\user8-128x128.jpg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.svg" />
@@ -136,6 +144,7 @@
     <Content Include="Areas\Admin\Views\Meta\AddMeta.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\Partial\MetaForm.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\MessageForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Meta\MetaList.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

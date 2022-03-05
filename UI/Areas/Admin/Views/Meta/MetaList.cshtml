@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "MetaList";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+@model List<DTO.MetaDTO>
+
+<section class="content-header">
+    <h1>Meta List</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Meta</a></li>
+        <li class="breadcrumb-item active"><a>Meta list</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    <button type="submit" class="btn btn-primary" hrel="/Admin/Meta/AddMeta">Add Meta</button>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">DataTable with default features</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Meta Content</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr id="a_@item.MetaID">
+                        <td>@item.Name</td>
+                        <td>@item.MetaContent</td>
+                        <td align="center" valign="middle">
+                            <a href="#">
+                                <img src="~/Areas/Admin/Content/icons/Update.ico" />
+                            </a>
+                        </td>
+                        <td align="center" valign="middle">
+                            <a href="#">
+                                <img src="~/Areas/Admin/Content/icons/Delete.ico" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            }
+            <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Meta Content</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
