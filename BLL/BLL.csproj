@@ -45,6 +45,7 @@
     <Compile Include="LogBLL.cs" />
     <Compile Include="MetaBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocialMediaBLL.cs" />
     <Compile Include="UserBLL.cs" />
   </ItemGroup>
   <ItemGroup>

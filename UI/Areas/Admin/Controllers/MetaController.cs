@@ -11,11 +11,6 @@ namespace UI.Areas.Admin.Controllers
     public class MetaController : Controller
     {
         // GET: Admin/Meta
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         MetaBLL bll = new MetaBLL();
         public ActionResult AddMeta()
         {

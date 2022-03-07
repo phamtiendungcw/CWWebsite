@@ -118,6 +118,7 @@
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MetaController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SocialMediaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -146,6 +147,8 @@
     <Content Include="Areas\Admin\Views\Shared\MessageForm.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\MetaList.cshtml" />
     <Content Include="Areas\Admin\Views\Meta\UpdateMeta.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\AddSocialMedia.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\Partial\SocialMediaForm.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

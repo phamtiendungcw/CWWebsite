@@ -107,6 +107,7 @@
     <Compile Include="SocialMedia.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SocialMediaDAO.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
