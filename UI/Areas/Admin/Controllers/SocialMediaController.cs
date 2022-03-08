@@ -59,5 +59,47 @@ namespace UI.Areas.Admin.Controllers
             dtoList = bll.GetSocialMedias();
             return View(dtoList);
         }
+
+        public ActionResult UpdateSocialMedia(int ID)
+        {
+            SocialMediaDTO dto = bll.GetSocialMediaWithID(ID);
+            return View(dto);
+        }
+        [HttpPost]
+        public ActionResult UpdateSocialMedia(SocialMediaDTO model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ViewBag.ProcessState = General.Messages.EmptyArea;
+            }
+            else
+            {
+                if (model.SocialImage != null)
+                {
+                    HttpPostedFileBase postedFile = model.SocialImage;
+                    Bitmap socialMedia = new Bitmap(postedFile.InputStream);
+                    var ext = Path.GetExtension(postedFile.FileName);
+                    var fileName = "";
+                    if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif")
+                    {
+                        var uniqueNumber = Guid.NewGuid().ToString();
+                        fileName = uniqueNumber + postedFile.FileName;
+                        socialMedia.Save(Server.MapPath("~/Areas/Admin/Content/SocialMediaImages/" + fileName));
+                        model.ImagePath = fileName;
+                    }
+                }
+                string oldImagePath = bll.UpdateSocialMedia(model);
+                if (model.SocialImage != null)
+                {
+                    if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/SocialMediaImages/" + oldImagePath)))
+                    {
+                        System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/SocialMediaImages/" + oldImagePath));
+                    }
+                }
+
+                ViewBag.ProcessState = General.Messages.UpdateSuccess;
+            }
+            return View(model);
+        }
     }
 }

@@ -1,15 +1,15 @@
 ﻿
 @{
-    ViewBag.Title = "AddSocialMedia";
+    ViewBag.Title = "UpdateSocialMedia";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
 <section class="content-header">
-    <h1>Add Social Media</h1>
+    <h1>Update Social Media</h1>
     <ol class="breadcrumb float-sm-left">
         <li class="breadcrumb-item"><a>Admin</a></li>
         <li class="breadcrumb-item"><a>Social Media</a></li>
-        <li class="breadcrumb-item active"><a>Add Social Media</a></li>
+        <li class="breadcrumb-item active"><a>Update Social Media</a></li>
     </ol>
 </section>
 <br />
@@ -21,7 +21,7 @@
         <div class="col-md-9">
             @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
             <div class="box box-primary">
-                @using (Html.BeginForm("AddSocialMedia", "SocialMedia", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("UpdateSocialMedia", "SocialMedia", FormMethod.Post, new { @enctype = "multipart/form-data" }))
                 {
                     @Html.Partial("Partial/SocialMediaForm")
                 }
