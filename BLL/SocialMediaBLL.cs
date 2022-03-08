@@ -24,5 +24,12 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.SocialAdd, General.TableName.Social, ID);
             return true;
         }
+
+        public List<SocialMediaDTO> GetSocialMedias()
+        {
+            List<SocialMediaDTO> dtoList = new List<SocialMediaDTO>();
+            dtoList = dao.GetSocialMedias();
+            return dtoList;
+        }
     }
 }

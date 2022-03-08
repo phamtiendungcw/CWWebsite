@@ -52,5 +52,12 @@ namespace UI.Areas.Admin.Controllers
                 ViewBag.ProcessState = General.Messages.EmptyArea;
             return View(model);
         }
+
+        public ActionResult SocialMediaList()
+        {
+            List<SocialMediaDTO> dtoList = new List<SocialMediaDTO>();
+            dtoList = bll.GetSocialMedias();
+            return View(dtoList);
+        }
     }
 }

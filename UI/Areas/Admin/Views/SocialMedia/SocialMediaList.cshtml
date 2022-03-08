@@ -1,21 +1,22 @@
 ﻿
 @{
-    ViewBag.Title = "MetaList";
+    ViewBag.Title = "SocialMediaList";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
-@model List<DTO.MetaDTO>
+
+@model List<DTO.SocialMediaDTO>
 
 <section class="content-header">
     <h1>Meta List</h1>
     <ol class="breadcrumb float-sm-left">
         <li class="breadcrumb-item"><a>Admin</a></li>
-        <li class="breadcrumb-item"><a>Meta</a></li>
-        <li class="breadcrumb-item active"><a>Meta List</a></li>
+        <li class="breadcrumb-item"><a>Social Media</a></li>
+        <li class="breadcrumb-item active"><a>Social Media List</a></li>
     </ol>
 </section>
 <br />
 <div class="card-footer">
-    <button type="submit" class="btn btn-primary" hrel="/Admin/Meta/AddMeta">Add Meta</button>
+    <button type="submit" class="btn btn-primary" onclick="window.location().hrel = '/Admin/SocialMedia/AddSocialMedia'">Add Social Media</button>
 </div>
 
 <div class="card">
@@ -28,7 +29,8 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Meta Content</th>
+                    <th>Link</th>
+                    <th>Image</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
@@ -36,11 +38,14 @@
             @foreach (var item in Model)
             {
                 <tbody>
-                    <tr id="a_@item.MetaID">
+                    <tr id="a_@item.ID">
                         <td>@item.Name</td>
-                        <td>@item.MetaContent</td>
+                        <td>@item.Link</td>
+                        <td>
+                            <img src="~/Areas/Admin/Content/SocialMediaImages/@item.ImagePath" width="60" height="40"/>
+                        </td>
                         <td align="center" valign="middle">
-                            <a href="/Admin/Meta/UpdateMeta/@item.MetaID">
+                            <a href="/Admin/Meta/UpdateMeta/@item.ID">
                                 <img src="~/Areas/Admin/Content/icons/Update.ico" />
                             </a>
                         </td>
@@ -55,7 +60,8 @@
             <tfoot>
                 <tr>
                     <th>Name</th>
-                    <th>Meta Content</th>
+                    <th>Link</th>
+                    <th>Image</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>

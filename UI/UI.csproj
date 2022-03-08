@@ -149,6 +149,7 @@
     <Content Include="Areas\Admin\Views\Meta\UpdateMeta.cshtml" />
     <Content Include="Areas\Admin\Views\SocialMedia\AddSocialMedia.cshtml" />
     <Content Include="Areas\Admin\Views\SocialMedia\Partial\SocialMediaForm.cshtml" />
+    <Content Include="Areas\Admin\Views\SocialMedia\SocialMediaList.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
