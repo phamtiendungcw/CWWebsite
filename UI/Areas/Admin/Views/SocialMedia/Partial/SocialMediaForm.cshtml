@@ -14,8 +14,7 @@
     <input hidden type="number" value="@Model.ID" name="ID" />
     <div class="form-group">
         @Html.LabelFor(x => x.SocialImage)
-        <input type="file" name="SocialImage" accept="image/gif, image/jpeg, image/png, image/jpg"
-               onchange="$('#SocialImage')[0].src = window.URL.createObjectURL(this.files[0])"/>
+        <input type="file" name="SocialImage" accept="image/gif, image/jpeg, image/png, image/jpg" onchange="$('#SocialImage')[0].src = window.URL.createObjectURL(this.files[0])"/>
         <br />
         @if (Model != null && Model.ImagePath != null)
         {
