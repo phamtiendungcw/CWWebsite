@@ -17,5 +17,21 @@ namespace BLL
             dto = userdao.GetUserWithUsernameAndPassword(model);
             return dto;
         }
+
+        public void AddUser(UserDTO model)
+        {
+            T_User user = new T_User();
+            user.Username = model.Username;
+            user.Password = model.Password;
+            user.Email = model.Email;
+            user.ImagePath = model.ImagePath;
+            user.NameSurname = model.Name;
+            user.isAdmin = model.IsAdmin;
+            user.AddDate = DateTime.Now;
+            user.LastUpdateDate = DateTime.Now;
+            user.LastUpdateUserID = UserStatic.UserID;
+            int ID = userdao.AddUser(user);
+            LogDAO.AddLog(General.ProcessType.UserAdd, General.TableName.User, ID);
+        }
     }
 }
