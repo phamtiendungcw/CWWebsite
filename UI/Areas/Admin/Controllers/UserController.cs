@@ -57,5 +57,46 @@ namespace UI.Areas.Admin.Controllers
 
             return View(model);
         }
+
+        public ActionResult UpdateUser(int ID)
+        {
+            UserDTO dto = new UserDTO();
+            dto = bll.GetUserWithID(ID);
+            return View(dto);
+        }
+        [HttpPost]
+        public ActionResult UpdateUser(UserDTO model)
+        {
+            if (!ModelState.IsValid)
+                ViewBag.ProcessState = General.Messages.EmptyArea;
+            else
+            {
+                if (model.UserImage != null)
+                {
+                    string fileName = "";
+                    HttpPostedFileBase postedFile = model.UserImage;
+                    Bitmap UserImage = new Bitmap(postedFile.InputStream);
+                    Bitmap resizeImage = new Bitmap(UserImage, 128, 128);
+                    string ext = Path.GetExtension(postedFile.FileName);
+                    if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif")
+                    {
+                        string uniqueNumber = Guid.NewGuid().ToString();
+                        fileName = uniqueNumber + postedFile.FileName;
+                        resizeImage.Save(Server.MapPath("~/Areas/Admin/Content/UserImage/" + fileName));
+                        model.ImagePath = fileName;
+                    }
+                }
+                string oldImagePath = bll.UpdateUser(model);
+                if (model.UserImage != null)
+                {
+                    if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/UserImage/" + oldImagePath)))
+                    {
+                        System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/UserImage/" + oldImagePath));
+                    }
+                    ViewBag.ProcessState = General.Messages.UpdateSuccess;
+                }
+            }
+            return View(model);
+        }
     }
 }
