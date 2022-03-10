@@ -10,7 +10,7 @@ namespace DTO
 {
     public class UserDTO
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         [Required(ErrorMessage = "Hãy nhập username")]
         public string Username { get; set; }
         [Required(ErrorMessage = "Hãy nhập password")]

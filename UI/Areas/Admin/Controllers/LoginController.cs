@@ -24,9 +24,9 @@ namespace UI.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 UserDTO user = userbll.GetUserWithUsernameAndPassword(model);
-                if (user.Id != 0)
+                if (user.ID != 0)
                 {
-                    UserStatic.UserID = user.Id;
+                    UserStatic.UserID = user.ID;
                     UserStatic.IsAdmin = user.IsAdmin;
                     UserStatic.NameSurname = user.Name;
                     UserStatic.ImagePath = user.ImagePath;

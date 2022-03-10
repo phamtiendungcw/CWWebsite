@@ -105,6 +105,7 @@
     <Content Include="Areas\Admin\Content\JS\responsive.bootstrap4.min.js" />
     <Content Include="Areas\Admin\Content\tempimage\Logo.png" />
     <Content Include="Areas\Admin\Content\tempimage\user8-128x128.jpg" />
+    <Content Include="Areas\Admin\Content\UserImage\user2-160x160.jpg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.svg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-regular-400.svg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-solid-900.svg" />
@@ -154,6 +155,7 @@
     <Content Include="Areas\Admin\Views\SocialMedia\UpdateSocialMedia.cshtml" />
     <Content Include="Areas\Admin\Views\User\AddUser.cshtml" />
     <Content Include="Areas\Admin\Views\User\Partial\UserForm.cshtml" />
+    <Content Include="Areas\Admin\Views\User\UserList.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -165,7 +167,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\SocialMediaImages\" />
-    <Folder Include="Areas\Admin\Content\UserImage\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />

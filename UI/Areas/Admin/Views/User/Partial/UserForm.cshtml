@@ -39,7 +39,7 @@
         @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email" })
         @Html.ValidationMessageFor(x => x.Email)
     </div>
-    <input type="number" hidden name="ID" value="@Model.Id" />
+    <input type="number" hidden name="ID" value="@Model.ID" />
     <div class="card-footer">
         <button class="btn btn-primary" type="submit">Save</button>
     </div>

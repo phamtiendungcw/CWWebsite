@@ -33,5 +33,10 @@ namespace BLL
             int ID = userdao.AddUser(user);
             LogDAO.AddLog(General.ProcessType.UserAdd, General.TableName.User, ID);
         }
+
+        public List<UserDTO> GetUsers()
+        {
+            return userdao.GetUsers();
+        }
     }
 }
