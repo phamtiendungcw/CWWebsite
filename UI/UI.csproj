@@ -160,6 +160,8 @@
     <Content Include="Areas\Admin\Views\User\UpdateUser.cshtml" />
     <Content Include="Areas\Admin\Views\Ads\AddAds.cshtml" />
     <Content Include="Areas\Admin\Views\Ads\Partial\AdsForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\AdsList.cshtml" />
+    <Content Include="Areas\Admin\Views\Ads\UpdateAds.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

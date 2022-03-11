@@ -24,5 +24,22 @@ namespace BLL
             int ID = dao.AddAds(ads);
             LogDAO.AddLog(General.ProcessType.AdsAdd, General.TableName.Ads, ID);
         }
+
+        public List<AdsDTO> GetAds()
+        {
+            return dao.GetAds();
+        }
+
+        public AdsDTO GetAdsWithID(int ID)
+        {
+            return dao.GetADsWithID(ID);
+        }
+
+        public string UpdateAds(AdsDTO model)
+        {
+            string oldImagePath = dao.UpdateAds(model);
+            LogDAO.AddLog(General.ProcessType.AdsUpdate, General.TableName.Ads, model.ID);
+            return oldImagePath;
+        }
     }
 }
