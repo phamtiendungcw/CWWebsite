@@ -66,6 +66,7 @@
     <Compile Include="Contact.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FavDAO.cs" />
     <Compile Include="FavLogoTitle.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>

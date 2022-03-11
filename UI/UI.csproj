@@ -117,6 +117,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FavController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MetaController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
@@ -162,6 +163,8 @@
     <Content Include="Areas\Admin\Views\Ads\Partial\AdsForm.cshtml" />
     <Content Include="Areas\Admin\Views\Ads\AdsList.cshtml" />
     <Content Include="Areas\Admin\Views\Ads\UpdateAds.cshtml" />
+    <Content Include="Areas\Admin\Views\Fav\UpdateFav.cshtml" />
+    <Content Include="Areas\Admin\Views\Fav\Partial\FavForm.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -173,6 +176,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\AdsImage\" />
+    <Folder Include="Areas\Admin\Content\FavImage\" />
     <Folder Include="Areas\Admin\Content\SocialMediaImages\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Controllers\" />

@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdsBLL.cs" />
+    <Compile Include="FavBLL.cs" />
     <Compile Include="General.cs" />
     <Compile Include="LogBLL.cs" />
     <Compile Include="MetaBLL.cs" />
