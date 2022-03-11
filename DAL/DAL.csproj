@@ -56,6 +56,7 @@
     <Compile Include="Address.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdsDAO.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
