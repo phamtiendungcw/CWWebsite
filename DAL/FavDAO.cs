@@ -15,8 +15,8 @@ namespace DAL
             FavDTO dto = new FavDTO();
             dto.ID = fav.ID;
             dto.Title = fav.Title;
-            dto.Logo = fav.Logo;
             dto.Fav = fav.Fav;
+            dto.Logo = fav.Logo;
             return dto;
         }
 
