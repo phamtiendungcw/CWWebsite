@@ -10,7 +10,7 @@ namespace UI.Areas.Admin.Controllers
 {
     public class LoginController : Controller
     {
-        UserBLL userbll = new UserBLL();
+        private UserBLL userbll = new UserBLL();
         // GET: Admin/Login
         public ActionResult Index()
         {

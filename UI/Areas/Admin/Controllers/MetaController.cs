@@ -11,7 +11,7 @@ namespace UI.Areas.Admin.Controllers
     public class MetaController : Controller
     {
         // GET: Admin/Meta
-        MetaBLL bll = new MetaBLL();
+        private MetaBLL bll = new MetaBLL();
         public ActionResult AddMeta()
         {
             MetaDTO dto = new MetaDTO();

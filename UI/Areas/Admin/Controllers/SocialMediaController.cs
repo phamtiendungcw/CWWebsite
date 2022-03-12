@@ -12,7 +12,7 @@ namespace UI.Areas.Admin.Controllers
 {
     public class SocialMediaController : Controller
     {
-        SocialMediaBLL bll = new SocialMediaBLL();
+        private SocialMediaBLL bll = new SocialMediaBLL();
         // GET: Admin/AddSocialMedia
         public ActionResult AddSocialMedia()
         {
