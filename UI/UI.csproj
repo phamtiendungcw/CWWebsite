@@ -124,6 +124,7 @@
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Areas\Admin\Controllers\SocialMediaController.cs" />
     <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +171,8 @@
     <Content Include="Areas\Admin\Views\Address\Partial\AddressForm.cshtml" />
     <Content Include="Areas\Admin\Views\Address\AddressList.cshtml" />
     <Content Include="Areas\Admin\Views\Address\UpdateAddress.cshtml" />
+    <Content Include="Areas\Admin\Views\Video\AddVideo.cshtml" />
+    <Content Include="Areas\Admin\Views\Video\Partial\VideoForm.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

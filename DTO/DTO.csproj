@@ -55,6 +55,7 @@
     <Compile Include="SocialMediaDTO.cs" />
     <Compile Include="UserDTO.cs" />
     <Compile Include="UserStatic.cs" />
+    <Compile Include="VideoDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
