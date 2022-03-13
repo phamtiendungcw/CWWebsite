@@ -47,5 +47,31 @@ namespace UI.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+        public ActionResult UpdateAddress(int ID)
+        {
+            List<AddressDTO> list = new List<AddressDTO>();
+            list = bll.GetAddress();
+            AddressDTO dto = list.First(x => x.ID == ID);
+            return View(dto);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult UpdateAddress(AddressDTO model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (bll.UpdateAddress(model))
+                    ViewBag.ProcessState = General.Messages.UpdateSuccess;
+                else
+                    ViewBag.ProcessState = General.Messages.GeneralError;
+            }
+            else
+            {
+                ViewBag.ProcessState = General.Messages.EmptyArea;
+            }
+            return View(model);
+        }
     }
 }

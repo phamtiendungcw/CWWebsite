@@ -33,5 +33,12 @@ namespace BLL
         {
             return dao.GetAddress();
         }
+
+        public bool UpdateAddress(AddressDTO model)
+        {
+            dao.UpdateAddress(model);
+            LogDAO.AddLog(General.ProcessType.AddressUpdate, General.TableName.Address, model.ID);
+            return true;
+        }
     }
 }

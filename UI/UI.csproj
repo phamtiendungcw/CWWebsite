@@ -169,6 +169,7 @@
     <Content Include="Areas\Admin\Views\Address\AddAddress.cshtml" />
     <Content Include="Areas\Admin\Views\Address\Partial\AddressForm.cshtml" />
     <Content Include="Areas\Admin\Views\Address\AddressList.cshtml" />
+    <Content Include="Areas\Admin\Views\Address\UpdateAddress.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

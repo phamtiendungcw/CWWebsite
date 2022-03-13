@@ -44,5 +44,26 @@ namespace DAL
             }
             return dtoList;
         }
+
+        public void UpdateAddress(AddressDTO model)
+        {
+            try
+            {
+                Address address = db.Addresses.First(x => x.ID == model.ID);
+                address.Address1 = model.AddressContent;
+                address.Email = model.Email;
+                address.Fax = model.Fax;
+                address.MapPathLarge = model.LargeMapPath;
+                address.MapPathSmall = model.SmallMapPath;
+                address.Phone = model.Phone;
+                address.Phone2 = model.Phone2;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }
