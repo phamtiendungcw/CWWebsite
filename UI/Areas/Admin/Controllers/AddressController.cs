@@ -12,6 +12,14 @@ namespace UI.Areas.Admin.Controllers
     {
         // GET: Admin/Address
         private AddressBLL bll = new AddressBLL();
+
+        public ActionResult AddressList()
+        {
+            List<AddressDTO> list = new List<AddressDTO>();
+            list = bll.GetAddress();
+            return View(list);
+        }
+
         public ActionResult AddAddress()
         {
             AddressDTO dto = new AddressDTO();

@@ -168,6 +168,7 @@
     <Content Include="Areas\Admin\Views\Fav\Partial\FavForm.cshtml" />
     <Content Include="Areas\Admin\Views\Address\AddAddress.cshtml" />
     <Content Include="Areas\Admin\Views\Address\Partial\AddressForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Address\AddressList.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

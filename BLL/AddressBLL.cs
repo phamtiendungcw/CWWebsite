@@ -28,5 +28,10 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.AddressAdd, General.TableName.Address, ID);
             return true;
         }
+
+        public List<AddressDTO> GetAddress()
+        {
+            return dao.GetAddress();
+        }
     }
 }
