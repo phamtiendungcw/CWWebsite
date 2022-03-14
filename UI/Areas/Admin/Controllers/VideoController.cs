@@ -13,6 +13,14 @@ namespace UI.Areas.Admin.Controllers
     {
         private VideoBLL bll = new VideoBLL();
         // GET: Admin/Video
+
+        public ActionResult VideoList()
+        {
+            List<VideoDTO> dtoList = new List<VideoDTO>();
+            dtoList = bll.GetVideos();
+            return View(dtoList);
+        }
+
         public ActionResult AddVideo()
         {
             VideoDTO dto = new VideoDTO();

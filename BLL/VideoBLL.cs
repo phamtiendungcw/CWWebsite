@@ -24,5 +24,10 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.VideoAdd, General.TableName.Video, ID);
             return true;
         }
+
+        public List<VideoDTO> GetVideos()
+        {
+            return dao.GetVideos();
+        }
     }
 }

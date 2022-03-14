@@ -173,6 +173,7 @@
     <Content Include="Areas\Admin\Views\Address\UpdateAddress.cshtml" />
     <Content Include="Areas\Admin\Views\Video\AddVideo.cshtml" />
     <Content Include="Areas\Admin\Views\Video\Partial\VideoForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Video\VideoList.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
