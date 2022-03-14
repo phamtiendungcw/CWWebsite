@@ -40,5 +40,34 @@ namespace DAL
             }
             return dtoList;
         }
+
+        public VideoDTO GetVideoWithID(int ID)
+        {
+            Video video = db.Videos.First(x => x.ID == ID);
+            VideoDTO dto = new VideoDTO();
+            dto.ID = video.ID;
+            dto.OriginalVideoPath = video.OriginalVideoPath;
+            dto.Title = video.Title;
+            return dto;
+        }
+
+        public void UpdateVideo(VideoDTO model)
+        {
+            try
+            {
+                Video video = db.Videos.First(x => x.ID == model.ID);
+                video.VideoPath = model.VideoPath;
+                video.OriginalVideoPath = model.OriginalVideoPath;
+                video.Title = model.Title;
+                video.LastUpdateDate = DateTime.Now;
+                video.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

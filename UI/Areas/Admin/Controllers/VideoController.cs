@@ -57,5 +57,37 @@ namespace UI.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+        public ActionResult UpdateVideo(int ID)
+        {
+            VideoDTO dto = new VideoDTO();
+            dto = bll.GetVideoWithID(ID);
+            return View(dto);
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult UpdateVideo(VideoDTO model)
+        {
+            if (ModelState.IsValid)
+            {
+                string path = model.OriginalVideoPath.Substring(32);
+                string mergeLink = "https://www.youtube.com/embed/";
+                mergeLink += path;
+                model.VideoPath =
+                    string.Format(
+                        @"< iframe width = ""300"" height = ""200"" src = ""{0}"" frameborder = ""0"" allowfullscreen ></ iframe >",
+                        mergeLink);
+                if (bll.UpdateVideo(model))
+                {
+                    ViewBag.ProcessState = General.Messages.UpdateSuccess;
+                }
+                else
+                    ViewBag.ProcessState = General.Messages.GeneralError;
+            }
+            else
+                ViewBag.ProcessState = General.Messages.EmptyArea;
+            return View(model);
+        }
     }
 }

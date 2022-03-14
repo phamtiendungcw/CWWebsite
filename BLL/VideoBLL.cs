@@ -29,5 +29,17 @@ namespace BLL
         {
             return dao.GetVideos();
         }
+
+        public VideoDTO GetVideoWithID(int ID)
+        {
+            return dao.GetVideoWithID(ID);
+        }
+
+        public bool UpdateVideo(VideoDTO model)
+        {
+            dao.UpdateVideo(model);
+            LogDAO.AddLog(General.ProcessType.VideoUpdate, General.TableName.Video, model.ID);
+            return true;
+        }
     }
 }

@@ -1,16 +1,16 @@
 ﻿
 @{
-    ViewBag.Title = "AddVideo";
+    ViewBag.Title = "UpdateVideo";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
 
 <section class="content-header">
-    <h1>Add Video</h1>
-    <ol class="breadcrumb float-sm-left">
-        <li class="breadcrumb-item"><a>Admin</a></li>
-        <li class="breadcrumb-item"><a>Video</a></li>
-        <li class="breadcrumb-item active"><a>Add Video</a></li>
-    </ol>
+<h1>Update Video</h1>
+<ol class="breadcrumb float-sm-left">
+    <li class="breadcrumb-item"><a>Admin</a></li>
+    <li class="breadcrumb-item"><a>Video</a></li>
+    <li class="breadcrumb-item active"><a>Update Video</a></li>
+</ol>
 </section>
 <br />
 <div class="card-footer">
@@ -21,7 +21,7 @@
         <div class="col-md-9">
             @Html.Partial("~/Areas/Admin/Views/Shared/MessageForm.cshtml")
             <div class="box box-primary">
-                @using (Html.BeginForm("AddVideo", "Video", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+                @using (Html.BeginForm("UpdateVideo", "Video", FormMethod.Post, new { @enctype = "multipart/form-data" }))
                 {
                     @Html.Partial("Partial/VideoForm")
                 }
@@ -29,6 +29,8 @@
         </div>
     </div>
 </section>
+
+
 
 
 
