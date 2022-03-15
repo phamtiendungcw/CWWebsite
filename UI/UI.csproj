@@ -178,6 +178,7 @@
     <Content Include="Areas\Admin\Views\Video\UpdateVideo.cshtml" />
     <Content Include="Areas\Admin\Views\Category\AddCategory.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Partial\CategoryForm.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\CategoryList.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

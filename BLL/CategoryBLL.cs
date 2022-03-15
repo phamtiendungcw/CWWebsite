@@ -22,5 +22,10 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.CategoryAdd, General.TableName.Category, ID);
             return true;
         }
+
+        public List<CategoryDTO> GetCategories()
+        {
+            return dao.GetCategories();
+        }
     }
 }

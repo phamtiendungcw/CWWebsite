@@ -11,7 +11,14 @@ namespace UI.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         private CategoryBLL bll = new CategoryBLL();
+
         // GET: Admin/Category
+        public ActionResult CategoryList()
+        {
+            List<CategoryDTO> model = bll.GetCategories();
+            return View(model);
+        }
+
         public ActionResult AddCategory()
         {
             CategoryDTO dto = new CategoryDTO();
