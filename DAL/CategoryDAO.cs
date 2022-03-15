@@ -38,5 +38,39 @@ namespace DAL
             }
             return dtoList;
         }
+
+        public CategoryDTO GetCategoryWithID(int ID)
+        {
+            try
+            {
+                Category category = db.Categories.First(x => x.ID == ID);
+                CategoryDTO dto = new CategoryDTO();
+                dto.ID = category.ID;
+                dto.CategoryName = category.CategoryName;
+                return dto;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public void UpdateCategory(CategoryDTO model)
+        {
+            try
+            {
+                Category category = db.Categories.First(x => x.ID == model.ID);
+                category.CategoryName = model.CategoryName;
+                category.LastUpdateDate = DateTime.Now;
+                category.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

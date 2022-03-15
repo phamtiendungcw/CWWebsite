@@ -45,5 +45,32 @@ namespace UI.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+        public ActionResult UpdateCategory(int ID)
+        {
+            CategoryDTO dto = bll.GetCategoryWithID(ID);
+            return View(dto);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(CategoryDTO model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (bll.UpdateCategoty(model))
+                {
+                    ViewBag.ProcessState = General.Messages.UpdateSuccess;
+                }
+                else
+                {
+                    ViewBag.ProcessState = General.Messages.GeneralError;
+                }
+            }
+            else
+            {
+                ViewBag.ProcessState = General.Messages.EmptyArea;
+            }
+            return View(model);
+        }
     }
 }

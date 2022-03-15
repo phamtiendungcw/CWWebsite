@@ -27,5 +27,17 @@ namespace BLL
         {
             return dao.GetCategories();
         }
+
+        public CategoryDTO GetCategoryWithID(int ID)
+        {
+            return dao.GetCategoryWithID(ID);
+        }
+
+        public bool UpdateCategoty(CategoryDTO model)
+        {
+            dao.UpdateCategory(model);
+            LogDAO.AddLog(General.ProcessType.CategoryUpdate, General.TableName.Category, model.ID);
+            return true;
+        }
     }
 }
