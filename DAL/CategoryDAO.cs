@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Objects.SqlClient;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using DTO;
 
 namespace DAL
@@ -71,6 +74,17 @@ namespace DAL
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        public static IEnumerable<SelectListItem> GetCategoriesForDropdown()
+        {
+            IEnumerable<SelectListItem> categoryList =
+                db.Categories.Where(x => x.isDeleted == false).OrderByDescending(x => x.AddDate).Select(x => new SelectListItem()
+                {
+                    Text = x.CategoryName,
+                    Value = SqlFunctions.StringConvert((double)x.ID)
+                }).ToList();
+            return categoryList;
         }
     }
 }

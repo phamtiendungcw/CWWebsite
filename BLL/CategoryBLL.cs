@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using DAL;
 using DTO;
 
@@ -38,6 +39,11 @@ namespace BLL
             dao.UpdateCategory(model);
             LogDAO.AddLog(General.ProcessType.CategoryUpdate, General.TableName.Category, model.ID);
             return true;
+        }
+
+        public static IEnumerable<SelectListItem> GetCategoriesForDropdown()
+        {
+            return CategoryDAO.GetCategoriesForDropdown();
         }
     }
 }
