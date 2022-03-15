@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AddressDTO.cs" />
     <Compile Include="AdsDTO.cs" />
+    <Compile Include="CategoryDTO.cs" />
     <Compile Include="FavDTO.cs" />
     <Compile Include="MetaDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

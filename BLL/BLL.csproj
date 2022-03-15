@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AddressBLL.cs" />
     <Compile Include="AdsBLL.cs" />
+    <Compile Include="CategoryBLL.cs" />
     <Compile Include="FavBLL.cs" />
     <Compile Include="General.cs" />
     <Compile Include="LogBLL.cs" />
