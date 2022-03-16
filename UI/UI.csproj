@@ -707,6 +707,7 @@
     <Content Include="Areas\Admin\Content\JS\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Areas\Admin\Content\JS\ckeditor\SECURITY.md" />
     <Content Include="Areas\Admin\Content\JS\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Areas\Admin\Views\Post\PostList.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

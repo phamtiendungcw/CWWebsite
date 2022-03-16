@@ -20,6 +20,7 @@ namespace DTO
         public string PostContent { get; set; }
         [Required(ErrorMessage = "Hãy chọn category")]
         public int CategoryID { get; set; }
+        public string CategoryName { get; set; }
         public IEnumerable<SelectListItem> Categories { get; set; }
         public List<PostImageDTO> PostImages { get; set; }
         [Display(Name = "Post Image")]
@@ -34,5 +35,6 @@ namespace DTO
         public bool Area3 { get; set; }
         public bool Notification { get; set; }
         public string Language { get; set; }
+        public DateTime AddDate { get; set; }
     }
 }

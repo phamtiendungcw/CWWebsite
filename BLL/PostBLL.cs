@@ -81,5 +81,10 @@ namespace BLL
                 LogDAO.AddLog(General.ProcessType.ImageAdd, General.TableName.Image, imageID);
             }
         }
+
+        public List<PostDTO> GetPosts()
+        {
+            return dao.GetPosts();
+        }
     }
 }

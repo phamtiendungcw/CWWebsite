@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAL
 {
@@ -43,6 +44,30 @@ namespace DAL
             db.PostTags.Add(item);
             db.SaveChanges();
             return item.ID;
+        }
+
+        public List<PostDTO> GetPosts()
+        {
+            var postList = (from p in db.Posts.Where(x => x.isDeleted == false)
+                            join c in db.Categories on p.CategoryID equals c.ID
+                            select new
+                            {
+                                ID = p.ID,
+                                Title = p.Title,
+                                categoryName = c.CategoryName,
+                                AddDate = p.AddDate
+                            }).OrderByDescending(x => x.AddDate).ToList();
+            List<PostDTO> dtoList = new List<PostDTO>();
+            foreach (var item in postList)
+            {
+                PostDTO dto = new PostDTO();
+                dto.Title = item.Title;
+                dto.ID = item.ID;
+                dto.CategoryName = item.categoryName;
+                dto.AddDate = item.AddDate;
+                dtoList.Add(dto);
+            }
+            return dtoList;
         }
     }
 }

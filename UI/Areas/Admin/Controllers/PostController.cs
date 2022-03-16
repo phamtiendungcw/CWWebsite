@@ -20,6 +20,13 @@ namespace UI.Areas.Admin.Controllers
             return View();
         }
 
+        public ActionResult PostList()
+        {
+            List<PostDTO> postList = new List<PostDTO>();
+            postList = bll.GetPosts();
+            return View(postList);
+        }
+
         public ActionResult AddPost()
         {
             PostDTO model = new PostDTO();
