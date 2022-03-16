@@ -719,6 +719,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Content\AdsImage\" />
     <Folder Include="Areas\Admin\Content\FavImage\" />
+    <Folder Include="Areas\Admin\Content\PostImage\" />
     <Folder Include="Areas\Admin\Content\SocialMediaImages\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Controllers\" />

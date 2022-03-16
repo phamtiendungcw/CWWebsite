@@ -72,6 +72,7 @@
     <Compile Include="MetaBLL.cs" />
     <Compile Include="PostBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeoLink.cs" />
     <Compile Include="SocialMediaBLL.cs" />
     <Compile Include="UserBLL.cs" />
     <Compile Include="VideoBLL.cs" />
