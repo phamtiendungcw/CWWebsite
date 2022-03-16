@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -85,6 +86,34 @@ namespace BLL
         public List<PostDTO> GetPosts()
         {
             return dao.GetPosts();
+        }
+
+        public PostDTO GetPostWithID(int ID)
+        {
+            PostDTO dto = new PostDTO();
+            dto = dao.GetPostWithID(ID);
+            dto.PostImages = dao.GetPostImageWithPostID(ID);
+            List<PostTag> tagList = dao.GetPostTagWithPostID(ID);
+            string tagValue = "";
+            foreach (var item in tagList)
+            {
+                tagValue += item.TagContent;
+                tagValue += ",";
+            }
+            dto.TagText = tagValue;
+            return dto;
+        }
+
+        public bool UpdatePost(PostDTO model)
+        {
+            model.SeoLink = SeoLink.GenerateUrl(model.Title);
+            dao.UpdatePost(model);
+            LogDAO.AddLog(General.ProcessType.PostUpdate, General.TableName.Post, model.ID);
+            if (model.PostImages != null)
+                SavePostImage(model.PostImages, model.ID);
+            dao.DeleteTags(model.ID);
+            AddTag(model.TagText, model.ID);
+            return true;
         }
     }
 }

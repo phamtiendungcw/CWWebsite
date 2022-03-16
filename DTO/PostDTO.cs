@@ -36,5 +36,6 @@ namespace DTO
         public bool Notification { get; set; }
         public string Language { get; set; }
         public DateTime AddDate { get; set; }
+        public bool isUpdate { get; set; } = false;
     }
 }
