@@ -40,5 +40,11 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.AddressUpdate, General.TableName.Address, model.ID);
             return true;
         }
+
+        public void DeleteAddress(int ID)
+        {
+            dao.DeleteAddress(ID);
+            LogDAO.AddLog(General.ProcessType.AddressDelete, General.TableName.Address, ID);
+        }
     }
 }
