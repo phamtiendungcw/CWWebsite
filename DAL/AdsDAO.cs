@@ -42,7 +42,7 @@ namespace DAL
 
         public AdsDTO GetADsWithID(int ID)
         {
-            Ad ads =db.Ads.First(x => x.ID == ID);
+            Ad ads = db.Ads.First(x => x.ID == ID);
             AdsDTO dto = new AdsDTO();
             dto.ID = ads.ID;
             dto.Name = ads.Name;
@@ -65,9 +65,9 @@ namespace DAL
                 db.SaveChanges();
                 return imagePath;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-
+                Console.WriteLine(e);
                 throw;
             }
         }
