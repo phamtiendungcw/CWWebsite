@@ -90,6 +90,7 @@
   <ItemGroup>
     <Content Include="Areas\Admin\Content\CSS\adminlte.min.css" />
     <Content Include="Areas\Admin\Content\CSS\all.min.css" />
+    <Content Include="Areas\Admin\Content\CSS\bootstrap-4.min.css" />
     <Content Include="Areas\Admin\Content\CSS\dataTables.bootstrap4.min.css" />
     <Content Include="Areas\Admin\Content\CSS\icheck-bootstrap.min.css" />
     <Content Include="Areas\Admin\Content\CSS\responsive.bootstrap4.min.css" />
@@ -591,10 +592,12 @@
     <Content Include="Areas\Admin\Content\JS\ckeditor\vendor\promise.js" />
     <Content Include="Areas\Admin\Content\JS\dataTables.bootstrap4.min.js" />
     <Content Include="Areas\Admin\Content\JS\dataTables.responsive.min.js" />
+    <Content Include="Areas\Admin\Content\JS\DeleteRecord.js" />
     <Content Include="Areas\Admin\Content\JS\demo.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.dataTables.min.js" />
     <Content Include="Areas\Admin\Content\JS\jquery.min.js" />
     <Content Include="Areas\Admin\Content\JS\responsive.bootstrap4.min.js" />
+    <Content Include="Areas\Admin\Content\JS\sweetalert2.min.js" />
     <Content Include="Areas\Admin\Content\tempimage\Logo.png" />
     <Content Include="Areas\Admin\Content\tempimage\user8-128x128.jpg" />
     <Content Include="Areas\Admin\Content\UserImage\user2-160x160.jpg" />
@@ -709,6 +712,7 @@
     <Content Include="Areas\Admin\Content\JS\ckeditor\skins\moono-lisa\readme.md" />
     <Content Include="Areas\Admin\Views\Post\PostList.cshtml" />
     <Content Include="Areas\Admin\Views\Post\UpdatePost.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\ModelMessage.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
