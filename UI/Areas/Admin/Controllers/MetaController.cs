@@ -63,5 +63,11 @@ namespace UI.Areas.Admin.Controllers
                 ViewBag.ProcessState = General.Messages.EmptyArea;
             return View(model);
         }
+
+        public JsonResult DeleteMeta(int ID)
+        {
+            bll.DeleteMeta(ID);
+            return Json("");
+        }
     }
 }
