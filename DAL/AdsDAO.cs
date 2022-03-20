@@ -52,6 +52,26 @@ namespace DAL
             return dto;
         }
 
+        public string DeleteAds(int ID)
+        {
+            try
+            {
+                Ad ads = db.Ads.First(x => x.ID == ID);
+                string imagePath = ads.ImagePath;
+                ads.isDeleted = true;
+                ads.DeletedDate = DateTime.Now;
+                ads.LastUpdateDate = DateTime.Now;
+                ads.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+                return imagePath;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public string UpdateAds(AdsDTO model)
         {
             try

@@ -84,7 +84,6 @@ namespace UI.Areas.Admin.Controllers
                         model.ImagePath = fileName;
                     }
                 }
-
                 string oldImagePath = bll.UpdateAds(model);
                 if (model.AdsImage != null)
                 {
@@ -96,6 +95,16 @@ namespace UI.Areas.Admin.Controllers
                 ViewBag.ProcessState = General.Messages.UpdateSuccess;
             }
             return View(model);
+        }
+
+        public JsonResult DeleteAds(int ID)
+        {
+            string imagePath = bll.DeleteAds(ID);
+            if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/AdsImage/" + imagePath)))
+            {
+                System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/AdsImage/" + imagePath));
+            }
+            return Json("");
         }
     }
 }
