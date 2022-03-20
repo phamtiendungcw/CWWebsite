@@ -89,5 +89,11 @@ namespace UI.Areas.Admin.Controllers
                 ViewBag.ProcessState = General.Messages.EmptyArea;
             return View(model);
         }
+
+        public JsonResult DeleteVideo(int ID)
+        {
+            bll.DeleteVideo(ID);
+            return Json("");
+        }
     }
 }
