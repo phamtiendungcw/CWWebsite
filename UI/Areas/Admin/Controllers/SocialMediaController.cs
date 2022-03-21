@@ -13,6 +13,7 @@ namespace UI.Areas.Admin.Controllers
     public class SocialMediaController : Controller
     {
         private SocialMediaBLL bll = new SocialMediaBLL();
+
         // GET: Admin/AddSocialMedia
         public ActionResult AddSocialMedia()
         {
@@ -96,10 +97,19 @@ namespace UI.Areas.Admin.Controllers
                         System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/SocialMediaImages/" + oldImagePath));
                     }
                 }
-
                 ViewBag.ProcessState = General.Messages.UpdateSuccess;
             }
             return View(model);
+        }
+
+        public JsonResult DeleteSocialMedia(int ID)
+        {
+            string imagePath = bll.DeleteSocialMedia(ID);
+            if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/SocialMediaImages/" + imagePath)))
+            {
+                System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/SocialMediaImages/" + imagePath));
+            }
+            return Json("");
         }
     }
 }
