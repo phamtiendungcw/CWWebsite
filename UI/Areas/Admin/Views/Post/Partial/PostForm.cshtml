@@ -71,11 +71,11 @@
                     {
                         <tr id="a_@item.ID">
                             <td>
-                                <img src="~/Areas/Admin/Content/PostImage/@item.ImagePath" alt="Alternate Text" width="60" height="40"/>
+                                <img src="~/Areas/Admin/Content/PostImage/@item.ImagePath" alt="Alternate Text" width="60" height="40" />
                             </td>
                             <td align="center" valign="middle">
                                 <a href="#">
-                                    <img src="~/Areas/Admin/Content/icons/Delete.ico" />
+                                    <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Post/DeletePostImage/',@item.ID)" />
                                 </a>
                             </td>
                         </tr>
@@ -90,9 +90,10 @@
             </table>
         </div>
         <!-- /.card-body -->
+        @Html.Partial("~/Areas/Admin/Views/Shared/ModelMessage.cshtml")
+        <script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
     }
     <div class="card-footer">
         <button class="btn btn-primary" type="submit">Save</button>
     </div>
-
 </div>

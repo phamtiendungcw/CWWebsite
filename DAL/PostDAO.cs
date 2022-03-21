@@ -140,5 +140,25 @@ namespace DAL
             }
             db.SaveChanges();
         }
+
+        public string DeletePostImage(int ID)
+        {
+            try
+            {
+                PostImage img = db.PostImages.First(x => x.ID == ID);
+                string imagePath = img.ImagePath;
+                img.isDeleted = true;
+                img.DeletedDate = DateTime.Now;
+                img.LastUpdate = DateTime.Now;
+                img.LastUpdateUserID = UserStatic.UserID;
+                db.SaveChanges();
+                return imagePath;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

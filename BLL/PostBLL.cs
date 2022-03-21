@@ -115,5 +115,12 @@ namespace BLL
             AddTag(model.TagText, model.ID);
             return true;
         }
+
+        public string DeletePostImage(int ID)
+        {
+            string imagePath = dao.DeletePostImage(ID);
+            LogDAO.AddLog(General.ProcessType.ImageDelete, General.TableName.Image, ID);
+            return imagePath;
+        }
     }
 }
