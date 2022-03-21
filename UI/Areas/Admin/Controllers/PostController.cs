@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class PostController : Controller
+    public class PostController : BaseController
     {
         private PostBLL bll = new PostBLL();
         // GET: Admin/Post

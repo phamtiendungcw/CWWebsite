@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class MetaController : Controller
+    public class MetaController : BaseController
     {
         // GET: Admin/Meta
         private MetaBLL bll = new MetaBLL();

@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class FavController : Controller
+    public class FavController : BaseController
     {
         // GET: Admin/Fav
         private FavBLL bll = new FavBLL();

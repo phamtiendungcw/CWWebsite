@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class AddressController : Controller
+    public class AddressController : BaseController
     {
         // GET: Admin/Address
         private AddressBLL bll = new AddressBLL();

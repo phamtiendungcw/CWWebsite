@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class AdsController : Controller
+    public class AdsController : BaseController
     {
         private AdsBLL bll = new AdsBLL();
         // GET: Admin/Ads

@@ -10,7 +10,7 @@ using DTO;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private UserBLL bll = new UserBLL();
         // GET: Admin/User

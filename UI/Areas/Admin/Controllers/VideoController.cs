@@ -9,7 +9,7 @@ using static System.Net.WebRequestMethods;
 
 namespace UI.Areas.Admin.Controllers
 {
-    public class VideoController : Controller
+    public class VideoController : BaseController
     {
         private VideoBLL bll = new VideoBLL();
         // GET: Admin/Video
