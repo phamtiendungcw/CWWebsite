@@ -156,9 +156,9 @@ namespace UI.Areas.Admin.Controllers
             List<PostImageDTO> imageList = bll.DeletePost(ID);
             foreach (var item in imageList)
             {
-                if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/PostImage/" + imageList)))
+                if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/PostImage/" + item.ImagePath)))
                 {
-                    System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/PostImage/" + imageList));
+                    System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/PostImage/" + item.ImagePath));
                 }
             }
             return Json("");

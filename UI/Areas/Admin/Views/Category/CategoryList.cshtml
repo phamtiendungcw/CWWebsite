@@ -42,7 +42,7 @@
                         </td>
                         <td align="center" valign="middle">
                             <a href="#">
-                                <img src="~/Areas/Admin/Content/icons/Delete.ico" />
+                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Category/DeleteCategory/',@item.ID)" />
                             </a>
                         </td>
                     </tr>
@@ -57,6 +57,8 @@
             </tfoot>
         </table>
     </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModelMessage.cshtml")
     <!-- /.card-body -->
 </div>
 <!-- /.card -->
+<script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
