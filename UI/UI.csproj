@@ -712,6 +712,7 @@
     <Content Include="Areas\Admin\Views\Post\PostList.cshtml" />
     <Content Include="Areas\Admin\Views\Post\UpdatePost.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\ModelMessage.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

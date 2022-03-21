@@ -15,6 +15,12 @@ namespace UI.Areas.Admin.Controllers
     {
         private PostBLL bll = new PostBLL();
         // GET: Admin/Post
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         public ActionResult PostList()
         {
             List<PostDTO> postList = new List<PostDTO>();
