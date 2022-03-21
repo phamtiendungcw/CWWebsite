@@ -16,6 +16,7 @@
     <link href="~/Areas/Admin/Content/CSS/responsive.bootstrap4.min.css" rel="stylesheet" />
 </head>
 <body class="hold-transition sidebar-mini">
+    @using DTO
     <!-- Site wrapper -->
     <div class="wrapper">
         <!-- Navbar -->
@@ -67,10 +68,10 @@
                 <!-- Sidebar user (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="~/Areas/Admin/Content/tempimage/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="~/Areas/Admin/Content/UserImage/@UserStatic.ImagePath" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">Tiến Dũng</a>
+                        <a href="#" class="d-block">@UserStatic.NameSurname</a>
                     </div>
                 </div>
 
@@ -269,6 +270,53 @@
                                 </li>
                             </ul>
                         </li>
+
+                        @if (UserStatic.IsAdmin)
+                        {
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-book"></i>
+                                    <p>
+                                        User
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/Admin/User/UserList" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>User List</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/Admin/User/AddUser" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Add User</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-book"></i>
+                                    <p>
+                                        User
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/Admin/User/UpdateUser/@UserStatic.UserID" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Update User</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
