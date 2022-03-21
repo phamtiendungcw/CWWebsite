@@ -79,9 +79,7 @@ namespace UI.Areas.Admin.Controllers
                     ViewBag.ProcessState = General.Messages.GeneralError;
             }
             else
-            {
                 ViewBag.ProcessState = General.Messages.EmptyArea;
-            }
             model.Categories = CategoryBLL.GetCategoriesForDropdown();
             return View(model);
         }
@@ -131,9 +129,7 @@ namespace UI.Areas.Admin.Controllers
                     model.PostImages = imageList;
                 }
                 if (bll.UpdatePost(model))
-                {
                     ViewBag.ProcessState = General.Messages.UpdateSuccess;
-                }
                 else
                     ViewBag.ProcessState = General.Messages.GeneralError;
             }
@@ -151,6 +147,19 @@ namespace UI.Areas.Admin.Controllers
             if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/PostImage/" + imagePath)))
             {
                 System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/PostImage/" + imagePath));
+            }
+            return Json("");
+        }
+
+        public JsonResult DeletePost(int ID)
+        {
+            List<PostImageDTO> imageList = bll.DeletePost(ID);
+            foreach (var item in imageList)
+            {
+                if (System.IO.File.Exists(Server.MapPath("~/Areas/Admin/Content/PostImage/" + imageList)))
+                {
+                    System.IO.File.Delete(Server.MapPath("~/Areas/Admin/Content/PostImage/" + imageList));
+                }
             }
             return Json("");
         }

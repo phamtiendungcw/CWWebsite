@@ -160,5 +160,29 @@ namespace DAL
                 throw;
             }
         }
+
+        public List<PostImageDTO> DeletePost(int ID)
+        {
+            Post post = db.Posts.First(x => x.ID == ID);
+            post.isDeleted = true;
+            post.DeleteDate = DateTime.Now;
+            post.LastUpdateDate = DateTime.Now;
+            post.LastUpdateUserID = UserStatic.UserID;
+            db.SaveChanges();
+            List<PostImage> imageList = db.PostImages.Where(x => x.PostID == ID).ToList();
+            List<PostImageDTO> dtoList = new List<PostImageDTO>();
+            foreach (var item in imageList)
+            {
+                PostImageDTO dto = new PostImageDTO();
+                dto.ImagePath = item.ImagePath;
+                item.isDeleted = true;
+                item.DeletedDate = DateTime.Now;
+                item.LastUpdate = DateTime.Now;
+                item.LastUpdateUserID = UserStatic.UserID;
+                dtoList.Add(dto);
+            }
+            db.SaveChanges();
+            return dtoList;
+        }
     }
 }

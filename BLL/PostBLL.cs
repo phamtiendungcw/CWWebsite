@@ -122,5 +122,12 @@ namespace BLL
             LogDAO.AddLog(General.ProcessType.ImageDelete, General.TableName.Image, ID);
             return imagePath;
         }
+
+        public List<PostImageDTO> DeletePost(int ID)
+        {
+            List<PostImageDTO> imageList = dao.DeletePost(ID);
+            LogDAO.AddLog(General.ProcessType.PostDelete, General.TableName.Post, ID);
+            return imageList;
+        }
     }
 }
