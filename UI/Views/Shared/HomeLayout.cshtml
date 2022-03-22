@@ -1,5 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+@using DTO
+@{
+    var layoutdto = (HomeLayoutDTO)ViewData["LayoutDTO"];
+    List<CategoryDTO> categories = layoutdto.Categories;
+}
 
 <head>
     <meta charset="UTF-8">
@@ -100,66 +105,11 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">Home</a></li>
-                                    <li><a href="archive-list.html">Archives</a></li>
-                                    <li>
-                                        <a href="#">Pages</a>
-                                        <ul class="dropdown">
-                                            <li><a href="index.html">- Home</a></li>
-                                            <li><a href="archive-list.html">- Archive List</a></li>
-                                            <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                            <li><a href="single-post.html">- Single Post</a></li>
-                                            <li><a href="video-post.html">- Single Video Post</a></li>
-                                            <li><a href="contact.html">- Contact</a></li>
-                                            <li><a href="typography.html">- Typography</a></li>
-                                            <li><a href="login.html">- Login</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Features</a>
-                                        <div class="megamenu">
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                            <ul class="single-mega cn-col-4">
-                                                <li><a href="index.html">- Home</a></li>
-                                                <li><a href="archive-list.html">- Archive List</a></li>
-                                                <li><a href="archive-grid.html">- Archive Grid</a></li>
-                                                <li><a href="single-post.html">- Single Post</a></li>
-                                                <li><a href="video-post.html">- Single Video Post</a></li>
-                                                <li><a href="contact.html">- Contact</a></li>
-                                                <li><a href="typography.html">- Typography</a></li>
-                                                <li><a href="login.html">- Login</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
+                                    @foreach (var item in categories)
+                                    {
+                                        <li><a href="">@item.CategoryName</a></li>
+                                    }
+                                    <li><a href="">Videos</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
@@ -176,10 +126,8 @@
 
     <!-- ##### Hero Area End ##### -->
     <!-- ##### Trending Posts Area Start ##### -->
-
     <!-- ##### Trending Posts Area End ##### -->
     <!-- ##### Vizew Post Area Start ##### -->
-
     <!-- ##### Vizew Psot Area End ##### -->
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
@@ -204,34 +152,26 @@
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget mb-70">
-                        <h6 class="widget-title">Latest Twister</h6>
+                        <h6 class="widget-title">Quick Access</h6>
                         <!-- Twitter Slides -->
                         <div class="twitter-slides owl-carousel">
 
                             <!-- Single Twitter Slide -->
                             <div class="single--twitter-slide">
-                                <!-- Single Twit -->
+                                @foreach (var item in categories)
+                                {
+                                    <!-- Single Twit -->
+                                    <div class="single-twit">
+                                        <a href=""><p><i class="fa fa-star"></i>@item.CategoryName</p></a>
+                                    </div>
+                                }
                                 <div class="single-twit">
-                                    <p><i class="fa fa-twitter"></i> <span> </span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
+                                    <a href=""><p><i class="fa fa-star"></i>Videos</p></a>
                                 </div>
-                                <!-- Single Twit -->
                                 <div class="single-twit">
-                                    <p><i class="fa fa-twitter"></i> <span> </span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
-                                </div>
-                            </div>
-
-                            <!-- Single Twitter Slide -->
-                            <div class="single--twitter-slide">
-                                <!-- Single Twit -->
-                                <div class="single-twit">
-                                    <p><i class="fa fa-twitter"></i> <span> </span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
-                                </div>
-                                <!-- Single Twit -->
-                                <div class="single-twit">
-                                    <p><i class="fa fa-twitter"></i> <span> </span> I am so happy because I found this magazine, and it just made Vizeweasier. Thanks for sharing</p>
+                                    <a href=""><p><i class="fa fa-star"></i>Contact</p></a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
