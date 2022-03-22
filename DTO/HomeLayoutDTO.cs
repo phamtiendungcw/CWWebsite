@@ -9,5 +9,11 @@ namespace DTO
     public class HomeLayoutDTO
     {
         public List<CategoryDTO> Categories { get; set; }
+        public SocialMediaDTO Facebook { get; set; }
+        public SocialMediaDTO Twitter { get; set; }
+        public SocialMediaDTO Instagram { get; set; }
+        public SocialMediaDTO Youtube { get; set; }
+        public SocialMediaDTO Linkedin { get; set; }
+        public SocialMediaDTO GooglePlus { get; set; }
     }
 }
