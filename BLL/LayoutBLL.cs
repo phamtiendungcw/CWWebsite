@@ -11,7 +11,8 @@ namespace BLL
     public class LayoutBLL
     {
         private CategoryDAO categorydao = new CategoryDAO();
-        SocialMediaDAO socialdao = new SocialMediaDAO();
+        private SocialMediaDAO socialdao = new SocialMediaDAO();
+        private FavDAO favdao = new FavDAO();
         public HomeLayoutDTO GetLayoutData()
         {
             HomeLayoutDTO dto = new HomeLayoutDTO();
@@ -23,6 +24,7 @@ namespace BLL
             dto.Instagram = socialMediaList.First(x => x.Link.Contains("instagram"));
             dto.Youtube = socialMediaList.First(x => x.Link.Contains("youtube"));
             dto.Linkedin = socialMediaList.First(x => x.Link.Contains("linkedin"));
+            dto.FavDTO = favdao.GetFav();
             return dto;
         }
     }

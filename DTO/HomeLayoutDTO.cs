@@ -15,5 +15,6 @@ namespace DTO
         public SocialMediaDTO Youtube { get; set; }
         public SocialMediaDTO Linkedin { get; set; }
         public SocialMediaDTO GooglePlus { get; set; }
+        public FavDTO FavDTO { get; set; }
     }
 }
