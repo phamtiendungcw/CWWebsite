@@ -6,6 +6,7 @@
     List<CategoryDTO> categories = layoutdto.Categories;
     FavDTO favdto = layoutdto.FavDTO;
     List<MetaDTO> metalist = layoutdto.MetaList;
+    AddressDTO address = layoutdto.Address;
 }
 
 <head>
@@ -157,48 +158,16 @@
                     </div>
                 </div>
                 <!-- Footer Widget Area -->
-                <div class="col-12 col-sm-6 col-xl-3">
-                    <div class="footer-widget mb-70">
-                        <h6 class="widget-title">Sport Videos</h6>
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex">
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/1.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">DC Shoes: gymkhana the</a>
-                                <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex">
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/2.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">Sweet Yummy Chocolatea Tea</a>
-                                <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget mb-70">
                         <h6 class="widget-title">Our Address</h6>
                         <!-- Contact Address -->
                         <div class="contact-address">
-                            <p>101 E 129th St, East Chicago, <br>IN 46312, US</p>
-                            <p>Phone: 001-1234-88888</p>
-                            <p>Email: info.colorlib@gmail.com</p>
+                            <p>Address: @address.AddressContent</p><br />
+                            <p>Phone: @address.Phone</p><br />
+                            <p>Fax: @address.Fax</p><br />
+                            <p>Email: @address.Email</p>
                         </div>
                         <!-- Footer Social Area -->
                         <div class="footer-social-area">
@@ -208,6 +177,12 @@
                             <a href="@layoutdto.Twitter.Link" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a>
                             <a href="@layoutdto.Linkedin.Link" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
                         </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-xl-3">
+                    <div class="footer-widget mb-70">
+                        @Html.Raw(address.SmallMapPath)
                     </div>
                 </div>
             </div>

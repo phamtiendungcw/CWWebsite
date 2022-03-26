@@ -17,5 +17,6 @@ namespace DTO
         public SocialMediaDTO GooglePlus { get; set; }
         public FavDTO FavDTO { get; set; }
         public List<MetaDTO> MetaList { get; set; }
+        public AddressDTO Address { get; set; }
     }
 }

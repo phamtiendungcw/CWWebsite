@@ -14,6 +14,7 @@ namespace BLL
         private SocialMediaDAO socialdao = new SocialMediaDAO();
         private FavDAO favdao = new FavDAO();
         private MetaDAO metadao = new MetaDAO();
+        private AddressDAO addressdao = new AddressDAO();
         public HomeLayoutDTO GetLayoutData()
         {
             HomeLayoutDTO dto = new HomeLayoutDTO();
@@ -27,6 +28,8 @@ namespace BLL
             dto.Linkedin = socialMediaList.First(x => x.Link.Contains("linkedin"));
             dto.FavDTO = favdao.GetFav();
             dto.MetaList = metadao.GetMetaData();
+            List<AddressDTO> addressList = addressdao.GetAddress();
+            dto.Address = addressList.First();
 
             return dto;
         }
