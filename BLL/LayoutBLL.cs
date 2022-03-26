@@ -13,6 +13,7 @@ namespace BLL
         private CategoryDAO categorydao = new CategoryDAO();
         private SocialMediaDAO socialdao = new SocialMediaDAO();
         private FavDAO favdao = new FavDAO();
+        private MetaDAO metadao = new MetaDAO();
         public HomeLayoutDTO GetLayoutData()
         {
             HomeLayoutDTO dto = new HomeLayoutDTO();
@@ -25,6 +26,8 @@ namespace BLL
             dto.Youtube = socialMediaList.First(x => x.Link.Contains("youtube"));
             dto.Linkedin = socialMediaList.First(x => x.Link.Contains("linkedin"));
             dto.FavDTO = favdao.GetFav();
+            dto.MetaList = metadao.GetMetaData();
+
             return dto;
         }
     }
