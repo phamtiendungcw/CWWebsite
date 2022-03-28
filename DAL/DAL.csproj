@@ -93,6 +93,7 @@
     <Compile Include="FavLogoTitle.cs">
       <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GeneralDAO.cs" />
     <Compile Include="LogDAO.cs" />
     <Compile Include="Log_Table.cs">
       <DependentUpon>PostModel.tt</DependentUpon>

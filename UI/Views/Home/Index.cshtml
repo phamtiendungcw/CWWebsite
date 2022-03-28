@@ -4,6 +4,8 @@
     Layout = "~/Views/Shared/HomeLayout.cshtml";
 }
 
+@model DTO.GeneralDTO
+
 <!-- ##### Vizew Post Area Start ##### -->
 <section class="vizew-post-area mb-50">
     <div class="container">
@@ -18,45 +20,26 @@
 
                     <!-- Featured Post Slides -->
                     <div class="featured-post-slides owl-carousel mb-30">
-                        <!-- Single Feature Post -->
-                        <div class="single-feature-post video-post bg-img" style="background-image: url(img/bg-img/14.jpg);">
-                            <!-- Play Button -->
-                            <a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="post-cata">Sports</a>
-                                <a href="single-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                                <div class="post-meta d-flex">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
+                        @foreach (var item in Model.SliderPost)
+                        {
+                            <div class="single-feature-post video-post bg-img" style="background-image: url(/Areas/Admin/Content/PostImage/@item.ImagePath);">
+                                <!-- Play Button -->
+                                <!-- Post Content -->
+                                <div class="post-content">
+                                    <a href="#" class="post-cata">@item.CategoryName</a>
+                                    <a href="single-post.html" class="post-title">@item.Title</a>
+                                    <div class="post-meta d-flex">
+                                        <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
+                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
+                                    </div>
                                 </div>
+
+                                <!-- Video Duration -->
+                                <span class="video-duration">05.03</span>
                             </div>
-
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
-
+                        }
                         <!-- Single Feature Post -->
-                        <div class="single-feature-post video-post bg-img" style="background-image: url(img/bg-img/7.jpg);">
-                            <!-- Play Button -->
-                            <a href="video-post.html" class="btn play-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
-
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="post-cata">Sports</a>
-                                <a href="single-post.html" class="post-title">Reunification of migrant toddlers, parents should be completed Thursday</a>
-                                <div class="post-meta d-flex">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 25</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 25</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 25</a>
-                                </div>
-                            </div>
-
-                            <!-- Video Duration -->
-                            <span class="video-duration">05.03</span>
-                        </div>
+                        <!-- Single Feature Post -->
                     </div>
 
                     <div class="row">

@@ -37,5 +37,7 @@ namespace DTO
         public string Language { get; set; }
         public DateTime AddDate { get; set; }
         public bool isUpdate { get; set; } = false;
+        public string ImagePath { get; set; }
+        public int CommentCount { get; set; }
     }
 }
