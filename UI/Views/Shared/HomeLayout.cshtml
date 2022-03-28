@@ -7,6 +7,7 @@
     FavDTO favdto = layoutdto.FavDTO;
     List<MetaDTO> metalist = layoutdto.MetaList;
     AddressDTO address = layoutdto.Address;
+    List<PostDTO> hotnews = layoutdto.HotNews;
 }
 
 <head>
@@ -48,13 +49,14 @@
                         <!-- Breaking News Widget -->
                         <div class="breaking-news-area d-flex align-items-center">
                             <div class="news-title">
-                                <p>Breaking News:</p>
+                                <p>Hot Trainings</p>
                             </div>
                             <div id="breakingNewsTicker" class="ticker">
                                 <ul>
-                                    <li><a href="single-post.html">10 Things Amazon Echo Can Do</a></li>
-                                    <li><a href="single-post.html">Welcome to Colorlib Family.</a></li>
-                                    <li><a href="single-post.html">Boys 'doing well' after Thai</a></li>
+                                    @foreach (var item in hotnews)
+                                    {
+                                        <li><a href="">@item.Title</a></li>
+                                    }
                                 </ul>
                             </div>
                         </div>

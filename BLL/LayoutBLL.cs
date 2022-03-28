@@ -15,6 +15,7 @@ namespace BLL
         private FavDAO favdao = new FavDAO();
         private MetaDAO metadao = new MetaDAO();
         private AddressDAO addressdao = new AddressDAO();
+        private PostDAO postdao = new PostDAO();
         public HomeLayoutDTO GetLayoutData()
         {
             HomeLayoutDTO dto = new HomeLayoutDTO();
@@ -30,6 +31,7 @@ namespace BLL
             dto.MetaList = metadao.GetMetaData();
             List<AddressDTO> addressList = addressdao.GetAddress();
             dto.Address = addressList.First();
+            dto.HotNews = postdao.GetHotNews();
 
             return dto;
         }

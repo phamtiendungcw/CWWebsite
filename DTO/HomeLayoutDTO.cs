@@ -18,5 +18,6 @@ namespace DTO
         public FavDTO FavDTO { get; set; }
         public List<MetaDTO> MetaList { get; set; }
         public AddressDTO Address { get; set; }
+        public List<PostDTO> HotNews { get; set; }
     }
 }
