@@ -41,6 +41,24 @@ namespace DAL
             return dtolist;
         }
 
+        public List<VideoDTO> GetVideos()
+        {
+            List<VideoDTO> dtoList = new List<VideoDTO>();
+            List<Video> list = db.Videos.Where(x => x.isDeleted == false).OrderByDescending(x => x.AddDate).Take(3).ToList();
+            foreach (var item in list)
+            {
+                VideoDTO dto = new VideoDTO();
+                dto.ID = item.ID;
+                dto.Title = item.Title;
+                dto.VideoPath = item.VideoPath;
+                dto.OriginalVideoPath = item.OriginalVideoPath;
+                dto.AddDate = item.AddDate;
+                dtoList.Add(dto);
+            }
+
+            return dtoList;
+        }
+
         public List<PostDTO> GetMostViewedPosts()
         {
             List<PostDTO> dtolist = new List<PostDTO>();

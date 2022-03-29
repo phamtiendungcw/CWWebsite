@@ -18,6 +18,7 @@ namespace BLL
             dto.BreakingPost = dao.GetBreakingPosts();
             dto.PopularPost = dao.GetPopularPosts();
             dto.MostViewedPost = dao.GetMostViewedPosts();
+            dto.Videos = dao.GetVideos();
             return dto;
         }
     }
