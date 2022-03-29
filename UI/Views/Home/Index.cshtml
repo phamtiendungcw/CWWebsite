@@ -23,7 +23,6 @@
                         @foreach (var item in Model.SliderPost)
                         {
                             <div class="single-feature-post video-post bg-img" style="background-image: url(/Areas/Admin/Content/PostImage/@item.ImagePath);">
-                                <!-- Play Button -->
                                 <!-- Post Content -->
                                 <div class="post-content">
                                     <a href="#" class="post-cata">@item.CategoryName</a>
@@ -100,7 +99,6 @@
                                         </div>
                                     </div>
                                 }
-                                <!-- Single Blog Post -->
                             </div>
                         </div>
                     </div>
@@ -135,83 +133,9 @@
                     </div>
 
                     <!-- ***** Single Widget ***** -->
-                    <div class="single-widget latest-video-widget mb-50">
-                        <!-- Section Heading -->
-                        <div class="section-heading style-2 mb-30">
-                            <h4>Latest Video</h4>
-                            <div class="line"></div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-post-area mb-30">
-                            <!-- Post Thumbnail -->
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/13.jpg" alt="">
-                            </div>
-
-                            <!-- Post Content -->
-                            <div class="post-content">
-                                <a href="#" class="post-cata cata-sm cata-success">Sports</a>
-                                <a href="single-post.html" class="post-title">Full article Prince Charles's 'urgent' global research</a>
-                                <div class="post-meta d-flex">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex">
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/1.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">DC Shoes: gymkhana five; the making of</a>
-                                <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 29</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 08</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 23</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex">
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/2.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">Sweet Yummy Chocolatea Tea</a>
-                                <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 17</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 33</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 26</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Blog Post -->
-                        <div class="single-blog-post d-flex">
-                            <div class="post-thumbnail">
-                                <img src="img/bg-img/35.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">How To Make Orange Chicken Recipe?</a>
-                                <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 11</a>
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 42</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 21</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ***** Single Widget ***** -->
                     <div class="single-widget add-widget mb-50">
-                        <a href="#"><img src="img/bg-img/add.png" alt=""></a>
+                        <a href="@Model.AdsList[0].Link" target="_blank"><img src="~/Areas/Admin/Content/AdsImage/@Model.AdsList[0].ImagePath" alt=""></a>
                     </div>
-                    <!-- ***** Sidebar Widget ***** -->
                 </div>
             </div>
         </div>
@@ -220,7 +144,7 @@
 <div class="row">
     <div class="col-12">
         <div class="section-heading">
-            <a href="#"><img src="#" /></a>
+            <a href="@Model.AdsList[1].Link" target="_blank"><img src="~/Areas/Admin/Content/AdsImage/@Model.AdsList[1].ImagePath" /></a>
         </div>
     </div>
 </div>

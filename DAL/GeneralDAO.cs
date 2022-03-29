@@ -136,7 +136,7 @@ namespace DAL
                             seolink = p.SeoLink,
                             viewcount = p.ViewCount,
                             AddDate = p.AddDate
-                        }).OrderBy(x => x.AddDate).Take(5).ToList();
+                        }).OrderByDescending(x => x.AddDate).Take(5).ToList();
             foreach (var item in list)
             {
                 PostDTO dto = new PostDTO();
