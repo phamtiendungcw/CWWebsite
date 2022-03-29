@@ -15,6 +15,7 @@ namespace BLL
         {
             GeneralDTO dto = new GeneralDTO();
             dto.SliderPost = dao.GetSliderPosts();
+            dto.BreakingPost = dao.GetBreakingPosts();
             return dto;
         }
     }
