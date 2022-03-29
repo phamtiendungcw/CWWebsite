@@ -35,8 +35,6 @@
                                 </div>
                             </div>
                         }
-                        <!-- Single Feature Post -->
-                        <!-- Single Feature Post -->
                     </div>
 
                     <div class="row">
@@ -92,49 +90,33 @@
                         <div class="col-12 col-lg-6">
                             <!-- Section Heading -->
                             <div class="section-heading style-2">
-                                <h4>Business Videos</h4>
+                                <h4>Popular Trainings</h4>
                                 <div class="line"></div>
                             </div>
 
                             <!-- Business Video Slides -->
                             <div class="business-video-slides owl-carousel mb-50">
                                 <!-- Single Blog Post -->
-                                <div class="single-post-area">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/17.jpg" alt="">
-                                    </div>
+                                @foreach (var item in Model.PopularPost)
+                                {
+                                    <div class="single-post-area">
+                                        <!-- Post Thumbnail -->
+                                        <div class="post-thumbnail">
+                                            <img src="~/Areas/Admin/Content/PostImage/@item.ImagePath" alt="">
+                                        </div>
 
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                        <a href="single-post.html" class="post-title">Full article Prince Charles's 'urgent' global research</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
+                                        <!-- Post Content -->
+                                        <div class="post-content">
+                                            <a href="#" class="post-cata cata-sm cata-primary">@item.CategoryName</a>
+                                            <a href="single-post.html" class="post-title">@item.Title</a>
+                                            <div class="post-meta d-flex">
+                                                <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
+                                                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-
+                                }
                                 <!-- Single Blog Post -->
-                                <div class="single-post-area">
-                                    <!-- Post Thumbnail -->
-                                    <div class="post-thumbnail">
-                                        <img src="img/bg-img/13.jpg" alt="">
-                                    </div>
-
-                                    <!-- Post Content -->
-                                    <div class="post-content">
-                                        <a href="#" class="post-cata cata-sm cata-primary">Business</a>
-                                        <a href="single-post.html" class="post-title">Full article Prince Charles's 'urgent' global research</a>
-                                        <div class="post-meta d-flex">
-                                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 38</a>
-                                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 22</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -166,8 +148,6 @@
                                 </div>
                             </div>
                         }
-                        <!-- Single Blog Post -->
-                        <!-- Single Blog Post -->
                     </div>
 
                     <!-- ***** Single Widget ***** -->
@@ -261,6 +241,7 @@
     </div>
 </div>
 <!-- ##### Vizew Psot Area End ##### -->
+
 <!-- ##### Trending Posts Area Start ##### -->
 <section class="trending-posts-area">
     <div class="container">
@@ -338,7 +319,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 <!-- ##### Trending Posts Area End ##### -->
