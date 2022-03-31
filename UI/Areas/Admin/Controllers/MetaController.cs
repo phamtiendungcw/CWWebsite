@@ -12,6 +12,7 @@ namespace UI.Areas.Admin.Controllers
     {
         // GET: Admin/Meta
         private MetaBLL bll = new MetaBLL();
+
         public ActionResult AddMeta()
         {
             MetaDTO dto = new MetaDTO();
@@ -36,6 +37,7 @@ namespace UI.Areas.Admin.Controllers
             MetaDTO newmodel = new MetaDTO();
             return View(newmodel);
         }
+
         public ActionResult MetaList()
         {
             List<MetaDTO> model = new List<MetaDTO>();
@@ -49,6 +51,7 @@ namespace UI.Areas.Admin.Controllers
             model = bll.GetMetaWithID(ID);
             return View(model);
         }
+
         [HttpPost]
         public ActionResult UpdateMeta(MetaDTO model)
         {

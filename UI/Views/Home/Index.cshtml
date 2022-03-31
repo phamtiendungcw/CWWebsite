@@ -57,8 +57,8 @@
 
                                         <!-- Post Content -->
                                         <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-success">@item.CategoryName</a>
-                                            <a href="single-post.html" class="post-title">@item.Title</a>
+                                            <a href="@Url.RouteUrl("Category", new{@CategoryName="first-category"})" class="post-cata cata-sm cata-success">@item.CategoryName</a>
+                                            <a href="@Url.RouteUrl("PostDetail", new {@ID=1,@CategoryName="second-category",@SeoLink="first-title"})" class="post-title">@item.Title</a>
                                             <div class="post-meta d-flex">
                                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
                                                 <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
