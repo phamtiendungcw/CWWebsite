@@ -55,7 +55,7 @@
                                 <ul>
                                     @foreach (var item in hotnews)
                                     {
-                                        <li><a href="">@item.Title</a></li>
+                                        <li><a href="@Url.RouteUrl("PostDetail", new { @ID = item.ID, @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), @SeoLink = item.SeoLink })">@item.Title</a></li>
                                     }
                                 </ul>
                             </div>
@@ -79,7 +79,7 @@
                                 </form>
                             </div>
                             <!-- Login -->
-                            <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+                            <a href="/Admin/Login/Index" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -108,9 +108,9 @@
                                 <ul>
                                     @foreach (var item in categories)
                                     {
-                                        <li><a href="">@item.CategoryName</a></li>
+                                        <li><a href="@Url.RouteUrl("Category", new { @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName) })">@item.CategoryName</a></li>
                                     }
-                                    <li><a href="">Videos</a></li>
+                                    <li><a href="@Url.RouteUrl("Category", new { @CategoryName = "video" })">Videos</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
@@ -131,7 +131,7 @@
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget mb-70">
                         <!-- Logo -->
-                        <a href="index.html" class="foo-logo d-block mb-4"><img src="~/Areas/Admin/Content/FavImage/@favdto.Logo" alt=""></a>
+                        <a href="@Url.RouteUrl("Home")" class="foo-logo d-block mb-4"><img src="~/Areas/Admin/Content/FavImage/@favdto.Logo" alt=""></a>
                     </div>
                 </div>
                 <!-- Footer Widget Area -->
@@ -146,11 +146,11 @@
                                 {
                                     <!-- Single Twit -->
                                     <div class="single-twit">
-                                        <a href=""><p><i class="fa fa-star"></i>@item.CategoryName</p></a>
+                                        <a href="@Url.RouteUrl("Category", new { @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName) })"><p><i class="fa fa-star"></i>@item.CategoryName</p></a>
                                     </div>
                                 }
                                 <div class="single-twit">
-                                    <a href=""><p><i class="fa fa-star"></i>Videos</p></a>
+                                    <a href="@Url.RouteUrl("Category", new { @CategoryName = "video" })"><p><i class="fa fa-star"></i>Videos</p></a>
                                 </div>
                                 <div class="single-twit">
                                     <a href=""><p><i class="fa fa-star"></i>Contact</p></a>

@@ -25,8 +25,8 @@
                             <div class="single-feature-post video-post bg-img" style="background-image: url(/Areas/Admin/Content/PostImage/@item.ImagePath);">
                                 <!-- Post Content -->
                                 <div class="post-content">
-                                    <a href="#" class="post-cata">@item.CategoryName</a>
-                                    <a href="single-post.html" class="post-title">@item.Title</a>
+                                    <a href="@Url.RouteUrl("Category", new { @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName) })" class="post-cata">@item.CategoryName</a>
+                                    <a href="@Url.RouteUrl("PostDetail", new { @ID = item.ID, @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), @SeoLink = item.SeoLink })" class="post-title">@item.Title</a>
                                     <div class="post-meta d-flex">
                                         <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
@@ -57,8 +57,8 @@
 
                                         <!-- Post Content -->
                                         <div class="post-content">
-                                            <a href="@Url.RouteUrl("Category", new{@CategoryName="first-category"})" class="post-cata cata-sm cata-success">@item.CategoryName</a>
-                                            <a href="@Url.RouteUrl("PostDetail", new {@ID=1,@CategoryName="second-category",@SeoLink="first-title"})" class="post-title">@item.Title</a>
+                                            <a href="@Url.RouteUrl("Category", new { @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName) })" class="post-cata cata-sm cata-success">@item.CategoryName</a>
+                                            <a href="@Url.RouteUrl("PostDetail", new { @ID = item.ID, @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), @SeoLink = item.SeoLink })" class="post-title">@item.Title</a>
                                             <div class="post-meta d-flex">
                                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
                                                 <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
@@ -90,8 +90,8 @@
 
                                         <!-- Post Content -->
                                         <div class="post-content">
-                                            <a href="#" class="post-cata cata-sm cata-primary">@item.CategoryName</a>
-                                            <a href="single-post.html" class="post-title">@item.Title</a>
+                                            <a href="@Url.RouteUrl("Category", new { @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName) })" class="post-cata cata-sm cata-primary">@item.CategoryName</a>
+                                            <a href="@Url.RouteUrl("PostDetail", new { @ID = item.ID, @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), @SeoLink = item.SeoLink })" class="post-title">@item.Title</a>
                                             <div class="post-meta d-flex">
                                                 <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
                                                 <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
@@ -122,7 +122,7 @@
                                     <img src="~/Areas/Admin/Content/PostImage/@item.ImagePath" alt="">
                                 </div>
                                 <div class="post-content">
-                                    <a href="single-post.html" class="post-title">@item.Title</a>
+                                    <a href="@Url.RouteUrl("PostDetail", new { @ID = item.ID, @CategoryName = BLL.SeoLink.GenerateUrl(item.CategoryName), @SeoLink = item.SeoLink })" class="post-title">@item.Title</a>
                                     <div class="post-meta d-flex justify-content-between">
                                         <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @item.CommentCount</a>
                                         <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> @item.ViewCount</a>
