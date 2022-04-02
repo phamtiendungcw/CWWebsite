@@ -12,7 +12,7 @@ namespace UI.Controllers
     {
         // GET: Home
         private LayoutBLL layoutbll = new LayoutBLL();
-        GeneralBLL bll = new GeneralBLL();
+        private GeneralBLL bll = new GeneralBLL();
 
         public ActionResult Index()
         {
@@ -37,7 +37,9 @@ namespace UI.Controllers
             HomeLayoutDTO layoutdto = new HomeLayoutDTO();
             layoutdto = layoutbll.GetLayoutData();
             ViewData["LayoutDTO"] = layoutdto;
-            return View();
+            GeneralDTO dto = new GeneralDTO();
+            dto = bll.GetPostDetailPageItemSwithID(ID);
+            return View(dto);
         }
     }
 }

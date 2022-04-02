@@ -14,7 +14,7 @@ namespace DTO
         public List<PostDTO> BreakingPost { get; set; }
         public List<VideoDTO> Videos { get; set; }
         public List<AdsDTO> AdsList { get; set; }
-        public List<PostDTO> PostDetail { get; set; }
+        public PostDTO PostDetail { get; set; }
 
     }
 }

@@ -12,13 +12,13 @@ namespace DTO
     public class PostDTO
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Hãy nhập title")]
+        [Required(ErrorMessage = "Hãy nhập title!")]
         public string Title { get; set; }
-        [Required(ErrorMessage = "Hãy nhập short content")]
+        [Required(ErrorMessage = "Hãy nhập short content!")]
         public string ShortContent { get; set; }
-        [Required(ErrorMessage = "Hãy nhập post content")]
+        [Required(ErrorMessage = "Hãy nhập post content!")]
         public string PostContent { get; set; }
-        [Required(ErrorMessage = "Hãy chọn category")]
+        [Required(ErrorMessage = "Hãy chọn category!")]
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
         public IEnumerable<SelectListItem> Categories { get; set; }
@@ -39,5 +39,6 @@ namespace DTO
         public bool isUpdate { get; set; } = false;
         public string ImagePath { get; set; }
         public int CommentCount { get; set; }
+        public List<CommentDTO> CommentList { get; set; }
     }
 }

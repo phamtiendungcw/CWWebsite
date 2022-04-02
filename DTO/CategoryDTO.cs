@@ -10,7 +10,7 @@ namespace DTO
     public class CategoryDTO
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Hãy nhập category name")]
+        [Required(ErrorMessage = "Hãy nhập category name!")]
         public string CategoryName { get; set; }
     }
 }

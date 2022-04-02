@@ -23,5 +23,14 @@ namespace BLL
             dto.AdsList = adsdao.GetAds();
             return dto;
         }
+
+        public GeneralDTO GetPostDetailPageItemSwithID(int ID)
+        {
+            GeneralDTO dto = new GeneralDTO();
+            dto.BreakingPost = dao.GetBreakingPosts();
+            dto.AdsList = adsdao.GetAds();
+            dto.PostDetail = dao.GetPostDetail(ID);
+            return dto;
+        }
     }
 }

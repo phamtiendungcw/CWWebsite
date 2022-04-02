@@ -154,5 +154,59 @@ namespace DAL
 
             return dtolist;
         }
+
+        public PostDTO GetPostDetail(int ID)
+        {
+            Post post = db.Posts.First(x => x.ID == ID);
+            post.ViewCount++;
+            db.SaveChanges();
+            PostDTO dto = new PostDTO();
+            dto.ID = post.ID;
+            dto.Title = post.Title;
+            dto.ShortContent = post.ShortContent;
+            dto.PostContent = post.PostContent;
+            dto.Language = post.LanguageName;
+            dto.SeoLink = post.SeoLink;
+            dto.CategoryID = post.CategoryID;
+            dto.CategoryName = (db.Categories.First(x => x.ID == dto.CategoryID)).CategoryName;
+            List<PostImage> images = db.PostImages.Where(x => x.isDeleted == false && x.PostID == ID).ToList();
+            List<PostImageDTO> imagedtolist = new List<PostImageDTO>();
+            foreach (var item in images)
+            {
+                PostImageDTO img = new PostImageDTO();
+                img.ID = item.ID;
+                img.ImagePath = item.ImagePath;
+                imagedtolist.Add(img);
+            }
+
+            dto.PostImages = imagedtolist;
+            dto.CommentCount = db.Comments.Where(x => x.isDeleted && x.PostID == ID && x.isApproved == true).Count();
+            List<Comment> comments = db.Comments.Where(x => x.isDeleted == false && x.PostID == ID && x.isApproved == true).ToList();
+            List<CommentDTO> commentdtolist = new List<CommentDTO>();
+            foreach (var item in comments)
+            {
+                CommentDTO cmdto = new CommentDTO();
+                cmdto.ID = item.ID;
+                cmdto.AddDate = item.AddDate;
+                cmdto.CommentContent = item.CommentContent;
+                cmdto.Name = item.NameSurname;
+                cmdto.Email = item.Email;
+                commentdtolist.Add(cmdto);
+            }
+
+            dto.CommentList = commentdtolist;
+            List<PostTag> tags = db.PostTags.Where(x => x.isDeleted == false && x.PostID == ID).ToList();
+            List<TagDTO> taglist = new List<TagDTO>();
+            foreach (var item in tags)
+            {
+                TagDTO tagdto = new TagDTO();
+                tagdto.ID = item.ID;
+                tagdto.TagContent = item.TagContent;
+                taglist.Add(tagdto);
+            }
+
+            dto.TagList = taglist;
+            return dto;
+        }
     }
 }

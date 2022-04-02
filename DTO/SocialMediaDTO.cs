@@ -11,10 +11,10 @@ namespace DTO
     public class SocialMediaDTO
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Hãy nhập mục name")]
+        [Required(ErrorMessage = "Hãy nhập mục name!")]
         public string Name { get; set; }
         public string ImagePath { get; set; }
-        [Required(ErrorMessage = "Hãy nhập mục link")]
+        [Required(ErrorMessage = "Hãy nhập mục link!")]
         public string Link { get; set; }
         [Display(Name = "Image")]
         public HttpPostedFileBase SocialImage { get; set; }

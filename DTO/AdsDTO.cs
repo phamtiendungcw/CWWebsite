@@ -11,12 +11,12 @@ namespace DTO
     public class AdsDTO
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Hãy nhập tên")]
+        [Required(ErrorMessage = "Hãy nhập name!")]
         public string Name { get; set; }
         public string ImagePath { get; set; }
-        [Required(ErrorMessage = "Hãy nhập link")]
+        [Required(ErrorMessage = "Hãy nhập link!")]
         public string Link { get; set; }
-        [Required(ErrorMessage = "Hãy nhập size ảnh")]
+        [Required(ErrorMessage = "Hãy nhập size ảnh!")]
         public string ImageSize { get; set; }
         [Display(Name = "Ads Image")]
         public HttpPostedFileBase AdsImage { get; set; }

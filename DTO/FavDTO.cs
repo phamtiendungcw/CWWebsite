@@ -11,7 +11,7 @@ namespace DTO
     public class FavDTO
     {
         public int ID { get; set; }
-        [Required(ErrorMessage = "Hãy nhập mục title")]
+        [Required(ErrorMessage = "Hãy nhập mục title!")]
         public string Title { get; set; }
         public string Fav { get; set; }
         public string Logo { get; set; }
