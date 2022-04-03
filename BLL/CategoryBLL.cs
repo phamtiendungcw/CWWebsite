@@ -34,7 +34,7 @@ namespace BLL
             return dao.GetCategoryWithID(ID);
         }
 
-        public bool UpdateCategoty(CategoryDTO model)
+        public bool UpdateCategory(CategoryDTO model)
         {
             dao.UpdateCategory(model);
             LogDAO.AddLog(General.ProcessType.CategoryUpdate, General.TableName.Category, model.ID);

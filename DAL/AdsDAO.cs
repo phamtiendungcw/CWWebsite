@@ -40,7 +40,7 @@ namespace DAL
             return dtoList;
         }
 
-        public AdsDTO GetADsWithID(int ID)
+        public AdsDTO GetAdsWithID(int ID)
         {
             Ad ads = db.Ads.First(x => x.ID == ID);
             AdsDTO dto = new AdsDTO();

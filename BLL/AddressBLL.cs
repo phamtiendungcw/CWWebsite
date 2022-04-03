@@ -11,7 +11,7 @@ namespace BLL
     public class AddressBLL
     {
         private AddressDAO dao = new AddressDAO();
-        public bool Address(AddressDTO model)
+        public bool AddAddress(AddressDTO model)
         {
             Address ads = new Address();
             ads.Address1 = model.AddressContent;
@@ -29,9 +29,9 @@ namespace BLL
             return true;
         }
 
-        public List<AddressDTO> GetAddress()
+        public List<AddressDTO> GetAddresses()
         {
-            return dao.GetAddress();
+            return dao.GetAddresses();
         }
 
         public bool UpdateAddress(AddressDTO model)

@@ -11,7 +11,7 @@ namespace BLL
     public class GeneralBLL
     {
         private GeneralDAO dao = new GeneralDAO();
-        AdsDAO adsdao = new AdsDAO();
+        private AdsDAO adsdao = new AdsDAO();
         public GeneralDTO GetAllPosts()
         {
             GeneralDTO dto = new GeneralDTO();
@@ -24,7 +24,7 @@ namespace BLL
             return dto;
         }
 
-        public GeneralDTO GetPostDetailPageItemSwithID(int ID)
+        public GeneralDTO GetPostDetailPageItemsWithID(int ID)
         {
             GeneralDTO dto = new GeneralDTO();
             dto.BreakingPost = dao.GetBreakingPosts();

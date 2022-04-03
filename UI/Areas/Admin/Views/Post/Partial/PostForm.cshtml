@@ -23,10 +23,10 @@
     </div>
     <div class="form-group">
         <label>Post Image</label>
-        <br />
-        <input type="file" name="PostImage" accept="image/gif, image/jpeg, image/png, image/jpg" multiple onchange="$('#PostImage')[0].src = window.URL.createObjectURL(this.files[0])" />
-        <br />
-        <img src="" width="300" height="200" id="PostImage" />
+        <br/>
+        <input type="file" name="PostImage" multiple onchange="$('#PostImage')[0].src = window.URL.createObjectURL(this.files[0])"/>
+        <br/>
+        <img width="300" height="200" id="PostImage"/>
     </div>
     <div class="form-group">
         <label>Tags</label>
@@ -91,9 +91,9 @@
         </div>
         <!-- /.card-body -->
         @Html.Partial("~/Areas/Admin/Views/Shared/ModelMessage.cshtml")
+        <script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>
     }
     <div class="card-footer">
         <button class="btn btn-primary" type="submit">Save</button>
     </div>
 </div>
-<script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>

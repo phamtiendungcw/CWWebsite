@@ -10,13 +10,13 @@ namespace UI.Areas.Admin.Controllers
 {
     public class AddressController : BaseController
     {
-        // GET: Admin/Address
+        // GET: Admin/AddAddress
         private AddressBLL bll = new AddressBLL();
 
         public ActionResult AddressList()
         {
             List<AddressDTO> list = new List<AddressDTO>();
-            list = bll.GetAddress();
+            list = bll.GetAddresses();
             return View(list);
         }
 
@@ -32,7 +32,7 @@ namespace UI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (bll.Address(model))
+                if (bll.AddAddress(model))
                 {
                     ViewBag.ProcessState = General.Messages.AddSuccess;
                     ModelState.Clear();
@@ -51,7 +51,7 @@ namespace UI.Areas.Admin.Controllers
         public ActionResult UpdateAddress(int ID)
         {
             List<AddressDTO> list = new List<AddressDTO>();
-            list = bll.GetAddress();
+            list = bll.GetAddresses();
             AddressDTO dto = list.First(x => x.ID == ID);
             return View(dto);
         }

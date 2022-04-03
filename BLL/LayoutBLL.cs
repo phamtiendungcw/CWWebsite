@@ -29,7 +29,7 @@ namespace BLL
             dto.Linkedin = socialMediaList.First(x => x.Link.Contains("linkedin"));
             dto.FavDTO = favdao.GetFav();
             dto.MetaList = metadao.GetMetaData();
-            List<AddressDTO> addressList = addressdao.GetAddress();
+            List<AddressDTO> addressList = addressdao.GetAddresses();
             dto.Address = addressList.First();
             dto.HotNews = postdao.GetHotNews();
 

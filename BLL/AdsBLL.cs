@@ -32,7 +32,7 @@ namespace BLL
 
         public AdsDTO GetAdsWithID(int ID)
         {
-            return dao.GetADsWithID(ID);
+            return dao.GetAdsWithID(ID);
         }
 
         public string UpdateAds(AdsDTO model)

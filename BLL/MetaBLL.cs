@@ -16,7 +16,7 @@ namespace BLL
             Meta meta = new Meta();
             meta.Name = model.Name;
             meta.MetaContent = model.MetaContent;
-            meta.AddDate = DateTime.Today;
+            meta.AddDate = DateTime.Now;
             meta.LastUpdateUserID = UserStatic.UserID;
             meta.LastUpdateDate = DateTime.Now;
             int MetaID = dao.AddMeta(meta);
@@ -27,7 +27,6 @@ namespace BLL
         public List<MetaDTO> GetMetaData()
         {
             List<MetaDTO> dtolist = new List<MetaDTO>();
-
             dtolist = dao.GetMetaData();
             return dtolist;
         }

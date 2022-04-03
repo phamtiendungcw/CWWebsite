@@ -600,6 +600,9 @@
     <Content Include="Areas\Admin\Content\JS\sweetalert2.min.js" />
     <Content Include="Areas\Admin\Content\tempimage\Logo.png" />
     <Content Include="Areas\Admin\Content\tempimage\user8-128x128.jpg" />
+    <Content Include="Content\toastr\toastr.css" />
+    <Content Include="Content\toastr\toastr.min.css" />
+    <Content Include="Content\toastr\toastr.min.js" />
     <Content Include="Areas\Admin\Content\UserImage\user2-160x160.jpg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-brands-400.svg" />
     <Content Include="Areas\Admin\Content\webfonts\fa-regular-400.svg" />
@@ -764,6 +767,7 @@
     <Content Include="Content\scss\utilities\_responsive.scss" />
     <Content Include="Content\scss\utilities\_variables.scss" />
     <Content Include="Content\scss\widget.scss" />
+    <Content Include="Content\toastr\toastr.js.map" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\HomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />

@@ -210,5 +210,19 @@ namespace DAL
             db.SaveChanges();
             return dtoList;
         }
+
+        public void AddComment(Comment comment)
+        {
+            try
+            {
+                db.Comments.Add(comment);
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

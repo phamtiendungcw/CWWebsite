@@ -57,7 +57,7 @@ namespace UI.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (bll.UpdateCategoty(model))
+                if (bll.UpdateCategory(model))
                 {
                     ViewBag.ProcessState = General.Messages.UpdateSuccess;
                 }

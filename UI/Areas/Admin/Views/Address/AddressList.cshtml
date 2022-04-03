@@ -8,16 +8,16 @@
 @model List<DTO.AddressDTO>
 
 <section class="content-header">
-    <h1>Address List</h1>
+    <h1>AddAddress List</h1>
     <ol class="breadcrumb float-sm-left">
         <li class="breadcrumb-item"><a>Admin</a></li>
-        <li class="breadcrumb-item"><a>Address</a></li>
-        <li class="breadcrumb-item active"><a>Address List</a></li>
+        <li class="breadcrumb-item"><a>AddAddress</a></li>
+        <li class="breadcrumb-item active"><a>AddAddress List</a></li>
     </ol>
 </section>
 <br />
 <div class="card-footer">
-    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Address/AddAddress'">Add Address</button>
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/AddAddress/AddAddAddress'">Add AddAddress</button>
 </div>
 
 <div class="card">
@@ -26,7 +26,7 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Address</th>
+                    <th>AddAddress</th>
                     <th>Phone</th>
                     <th>Update</th>
                     <th>Delete</th>
@@ -39,13 +39,13 @@
                         <td>@item.AddressContent</td>
                         <td>@item.Phone</td>
                         <td align="center" valign="middle">
-                            <a href="/Admin/Address/UpdateAddress/@item.ID">
+                            <a href="/Admin/AddAddress/UpdateAddAddress/@item.ID">
                                 <img src="~/Areas/Admin/Content/icons/Update.ico" />
                             </a>
                         </td>
                         <td align="center" valign="middle">
                             <a href="#">
-                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Address/DeleteAddress/',@item.ID)" />
+                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/AddAddress/DeleteAddAddress/',@item.ID)" />
                             </a>
                         </td>
                     </tr>
@@ -53,7 +53,7 @@
             }
             <tfoot>
                 <tr>
-                    <th>Address</th>
+                    <th>AddAddress</th>
                     <th>Phone</th>
                     <th>Update</th>
                     <th>Delete</th>

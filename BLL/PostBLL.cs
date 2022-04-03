@@ -33,7 +33,7 @@ namespace BLL
             post.LastUpdateUserID = UserStatic.UserID;
             post.LastUpdateDate = DateTime.Now;
             int ID = dao.AddPost(post);
-            LogBLL.AddLog(General.ProcessType.PostAdd, General.TableName.Post, ID);
+            LogDAO.AddLog(General.ProcessType.PostAdd, General.TableName.Post, ID);
             SavePostImage(model.PostImages, ID);
             AddTag(model.TagText, ID);
             return true;
@@ -128,6 +128,18 @@ namespace BLL
             List<PostImageDTO> imageList = dao.DeletePost(ID);
             LogDAO.AddLog(General.ProcessType.PostDelete, General.TableName.Post, ID);
             return imageList;
+        }
+
+        public bool AddComment(GeneralDTO model)
+        {
+            Comment comment = new Comment();
+            comment.PostID = model.PostID;
+            comment.NameSurname = model.Name;
+            comment.Email = model.Email;
+            comment.CommentContent = model.Message;
+            comment.AddDate = DateTime.Now;
+            dao.AddComment(comment);
+            return true;
         }
     }
 }

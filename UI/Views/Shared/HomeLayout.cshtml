@@ -26,6 +26,7 @@
     <link rel="icon" href="~/Areas/Admin/Content/FavImage/@favdto.Fav">
     <!-- Stylesheet -->
     <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/toastr/toastr.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -163,10 +164,10 @@
                 <!-- Footer Widget Area -->
                 <div class="col-12 col-sm-6 col-xl-3">
                     <div class="footer-widget mb-70">
-                        <h6 class="widget-title">Our Address</h6>
-                        <!-- Contact Address -->
+                        <h6 class="widget-title">Our AddAddress</h6>
+                        <!-- Contact AddAddress -->
                         <div class="contact-address">
-                            <p>Address: @address.AddressContent</p><br />
+                            <p>AddAddress: @address.AddressContent</p><br />
                             <p>Phone: @address.Phone</p><br />
                             <p>Fax: @address.Fax</p><br />
                             <p>Email: @address.Email</p>
@@ -230,6 +231,18 @@
     <script src="~/Content/js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="~/Content/js/active.js"></script>
+    <script src="~/Content/toastr/toastr.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        var result = "@ViewData["CommentState"]";
+        if (result != "") {
+            if (result == "Success")
+                toastr.success(result);
+            else
+                toastr.error(result);
+        }
+    });
+    </script>
 </body>
 
 </html>

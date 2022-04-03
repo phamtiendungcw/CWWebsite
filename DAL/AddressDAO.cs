@@ -25,7 +25,7 @@ namespace DAL
             }
         }
 
-        public List<AddressDTO> GetAddress()
+        public List<AddressDTO> GetAddresses()
         {
             List<Address> list = db.Addresses.Where(x => x.isDeleted == false).OrderBy(x => x.AddDate).ToList();
             List<AddressDTO> dtoList = new List<AddressDTO>();
