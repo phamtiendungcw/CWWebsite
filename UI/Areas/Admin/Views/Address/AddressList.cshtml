@@ -17,7 +17,7 @@
 </section>
 <br />
 <div class="card-footer">
-    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/AddAddress/AddAddAddress'">Add AddAddress</button>
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Address/AddAddress'">Add Address</button>
 </div>
 
 <div class="card">
@@ -39,13 +39,13 @@
                         <td>@item.AddressContent</td>
                         <td>@item.Phone</td>
                         <td align="center" valign="middle">
-                            <a href="/Admin/AddAddress/UpdateAddAddress/@item.ID">
+                            <a href="/Admin/Address/UpdateAddress/@item.ID">
                                 <img src="~/Areas/Admin/Content/icons/Update.ico" />
                             </a>
                         </td>
                         <td align="center" valign="middle">
                             <a href="#">
-                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/AddAddress/DeleteAddAddress/',@item.ID)" />
+                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Address/DeleteAddress/',@item.ID)" />
                             </a>
                         </td>
                     </tr>
