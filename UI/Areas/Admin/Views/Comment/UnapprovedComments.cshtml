@@ -3,19 +3,19 @@
     ViewBag.Title = "MetaList";
     Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
 }
-@model List<DTO.MetaDTO>
+@model List<DTO.CommentDTO>
 
 <section class="content-header">
-    <h1>Meta List</h1>
+    <h1>Unapproved Comment List</h1>
     <ol class="breadcrumb float-sm-left">
         <li class="breadcrumb-item"><a>Admin</a></li>
         <li class="breadcrumb-item"><a>Meta</a></li>
-        <li class="breadcrumb-item active"><a>Meta List</a></li>
+        <li class="breadcrumb-item active"><a>Unapproved Comment List</a></li>
     </ol>
 </section>
 <br />
 <div class="card-footer">
-    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Meta/AddMeta'">Add Meta</button>
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Comment/AllComments'">All Comments List</button>
 </div>
 
 <div class="card">
@@ -24,28 +24,32 @@
         <table id="example1" class="table table-bordered table-striped">
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>Meta Content</th>
-                    <th>Update</th>
+                    <th>Post Title</th>
+                    <th>Comment Content</th>
+                    <th>Email</th>
+                    <th>Add Date</th>
+                    <th>Approve</th>
                     <th>Delete</th>
                 </tr>
             </thead>
             @foreach (var item in Model)
             {
                 <tbody>
-                    <tr id="a_@item.MetaID">
-                        <td>@item.Name</td>
-                        <td>@item.MetaContent</td>
+                    <tr id="a_@item.ID">
+                        <td>@item.PostTitle</td>
+                        <td>@item.CommentContent</td>
+                        <td>@item.Email</td>
+                        <td>@item.AddDate.ToString("dd.MM.yyyy")</td>
                         <td align="center" valign="middle">
-                            <a href="/Admin/Meta/UpdateMeta/@item.MetaID">
+                            <a href="/Admin/Comment/ApproveComment/@item.ID">
                                 <br />
-                                <img src="~/Areas/Admin/Content/icons/Update.ico"/>
+                                <img src="~/Areas/Admin/Content/icons/Approve.ico"/>
                             </a>
                         </td>
                         <td align="center" valign="middle">
                             <a href="#">
                                 <br />
-                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Meta/DeleteMeta/', @item.MetaID)"/>
+                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Comment/DeleteComment/', @item.ID)"/>
                             </a>
                         </td>
                     </tr>
@@ -53,9 +57,11 @@
             }
             <tfoot>
                 <tr>
-                    <th>Name</th>
-                    <th>Meta Content</th>
-                    <th>Update</th>
+                    <th>Post Title</th>
+                    <th>Comment Content</th>
+                    <th>Email</th>
+                    <th>Add Date</th>
+                    <th>Approve</th>
                     <th>Delete</th>
                 </tr>
             </tfoot>

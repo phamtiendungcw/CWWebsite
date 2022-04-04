@@ -247,31 +247,56 @@
                         </li>
 
                         <!-- Video -->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-book"></i>
-                                <p>
-                                    Videos
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/Admin/Video/VideoList" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Video List</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/Admin/Video/AddVideo" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Add Video</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                Videos
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/Admin/Video/VideoList" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Video List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Admin/Video/AddVideo" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Add Video</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
 
-                        @if (UserStatic.IsAdmin)
+                    <!--Comment-->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                Comments
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/Admin/Video/VideoList" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Video List</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Admin/Comment/UnapprovedComments" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Unapproved Comments</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    @if (UserStatic.IsAdmin)
                         {
                             <li class="nav-item">
                                 <a href="#" class="nav-link">

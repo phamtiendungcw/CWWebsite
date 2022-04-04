@@ -224,5 +224,52 @@ namespace DAL
                 throw;
             }
         }
+
+        public List<CommentDTO> GetComments()
+        {
+            List<CommentDTO> dtolist = new List<CommentDTO>();
+            var list = (from c in db.Comments.Where(x => x.isDeleted == false && x.isApproved == false)
+                        join p in db.Posts on c.PostID equals p.ID
+                        select new
+                        {
+                            ID = c.ID,
+                            PostTitle = p.Title,
+                            Email = c.Email,
+                            Content = c.CommentContent,
+                            AddDate = c.AddDate
+                        }).OrderBy(x => x.AddDate).ToList();
+            foreach (var item in list)
+            {
+                CommentDTO dto = new CommentDTO();
+                dto.ID = item.ID;
+                dto.PostTitle = item.PostTitle;
+                dto.Email = item.Email;
+                dto.CommentContent = item.Content;
+                dto.AddDate = item.AddDate;
+                dtolist.Add(dto);
+            }
+            return dtolist;
+        }
+
+        public void ApproveComment(int ID)
+        {
+            Comment cmt = db.Comments.First(x => x.ID == ID);
+            cmt.isApproved = true;
+            cmt.ApproveUserID = UserStatic.UserID;
+            cmt.ApproveDate = DateTime.Now;
+            cmt.LastUpdateDate = DateTime.Now;
+            cmt.LastUpdateUserID = UserStatic.UserID;
+            db.SaveChanges();
+        }
+
+        public void DeleteComment(int ID)
+        {
+            Comment cmt = db.Comments.First(x => x.ID == ID);
+            cmt.isDeleted = true;
+            cmt.DeletedDate = DateTime.Now;
+            cmt.LastUpdateUserID = UserStatic.UserID;
+            cmt.LastUpdateDate = DateTime.Now;
+            db.SaveChanges();
+        }
     }
 }

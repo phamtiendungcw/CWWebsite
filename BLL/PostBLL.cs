@@ -141,5 +141,22 @@ namespace BLL
             dao.AddComment(comment);
             return true;
         }
+
+        public List<CommentDTO> GetComments()
+        {
+            return dao.GetComments();
+        }
+
+        public void ApproveComment(int ID)
+        {
+            dao.ApproveComment(ID);
+            LogDAO.AddLog(General.ProcessType.CommentApprove, General.TableName.Comment, ID);
+        }
+
+        public void DeleteComment(int ID)
+        {
+            dao.DeleteComment(ID);
+            LogDAO.AddLog(General.ProcessType.CommentDelete, General.TableName.Comment, ID);
+        }
     }
 }
