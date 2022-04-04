@@ -58,8 +58,8 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="~/Views/Home/Index.cshtml" class="brand-link">
-                <img src="~/Areas/Admin/Content/tempimage/Logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <a href="@Url.RouteUrl("Home")" class="brand-link">
+                <img src="~/Areas/Admin/Content/tempimage/Logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;">
                 <span class="brand-text font-weight-light">Cruel Wolf</span>
             </a>
 
@@ -121,12 +121,12 @@
                             </ul>
                         </li>
 
-                        <!-- AddAddress -->
+                        <!-- Address -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
-                                    AddAddress
+                                    Address
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -134,13 +134,13 @@
                                 <li class="nav-item">
                                     <a href="/Admin/Address/AddressList" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>AddAddress List</p>
+                                        <p>Address List</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="/Admin/Address/AddAddress" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Add AddAddress</p>
+                                        <p>Add Address</p>
                                     </a>
                                 </li>
                             </ul>
@@ -364,7 +364,7 @@
             $("#example1").DataTable({
                 "responsive": true,
                 "autoWidth": false,
-                "ordering": false,
+                "ordering": false
             });
             $('#example2').DataTable({
                 "paging": true,

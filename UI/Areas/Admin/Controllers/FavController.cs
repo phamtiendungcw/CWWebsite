@@ -34,7 +34,7 @@ namespace UI.Areas.Admin.Controllers
                     string favName = "";
                     HttpPostedFileBase postedFileFav = model.FavImage;
                     Bitmap favImage = new Bitmap(postedFileFav.InputStream);
-                    Bitmap resizeFavImage = new Bitmap(favImage, 100, 100);
+                    Bitmap resizeFavImage = new Bitmap(favImage, 900, 300);
                     string ext = Path.GetExtension(postedFileFav.FileName);
                     if (ext == ".ico" || ext == ".jpg" || ext == ".jpeg" || ext == ".png")
                     {
@@ -52,7 +52,7 @@ namespace UI.Areas.Admin.Controllers
                     string logoName = "";
                     HttpPostedFileBase postedFileLogo = model.LogoImage;
                     Bitmap logoImage = new Bitmap(postedFileLogo.InputStream);
-                    Bitmap resizeLogoImage = new Bitmap(logoImage, 100, 100);
+                    Bitmap resizeLogoImage = new Bitmap(logoImage, 300, 300);
                     string ext = Path.GetExtension(postedFileLogo.FileName);
                     if (ext == ".ico" || ext == ".jpg" || ext == ".jpeg" || ext == ".png")
                     {

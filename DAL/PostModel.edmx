@@ -614,7 +614,7 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
-          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" Nullable="false" />
           <NavigationProperty Name="Post" Relationship="Self.FK_Comment_Post" FromRole="Comment" ToRole="Post" />
           <NavigationProperty Name="T_User" Relationship="Self.FK_Comment_T_User" FromRole="Comment" ToRole="T_User" />
         </EntityType>

@@ -48,7 +48,7 @@
                                 <div class="post-meta d-flex align-items-center">
                                     <a href="#" class="post-author">DungCW</a>
                                     <i class="fa fa-circle" aria-hidden="true"></i>
-                                    <a href="#" class="post-date">@Model.PostDetail.AddDate.ToString("dd.MM.yyyy dddd")</a>
+                                    <a href="#" class="post-date">@Model.PostDetail.AddDate.ToString("dddd, dd.MM.yyyy")</a>
                                 </div>
                                 <div class="post-meta d-flex">
                                     <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> @Model.PostDetail.CommentCount</a>
@@ -108,7 +108,7 @@
                                         <div class="comment-content d-flex">
                                             <!-- Comment Meta -->
                                             <div class="comment-meta">
-                                                <a href="#" class="comment-date">@item.AddDate.ToString("dd.MM.yyyy")</a>
+                                                <a href="#" class="comment-date">@item.AddDate.ToString("dddd, dd.MM.yyyy")</a>
                                                 <h6>@item.Name</h6>
                                                 <p>@item.CommentContent</p>
                                                 <div class="d-flex align-items-center">

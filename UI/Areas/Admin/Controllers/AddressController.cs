@@ -10,7 +10,7 @@ namespace UI.Areas.Admin.Controllers
 {
     public class AddressController : BaseController
     {
-        // GET: Admin/AddAddress
+        // GET: Admin/Address
         private AddressBLL bll = new AddressBLL();
 
         public ActionResult AddressList()

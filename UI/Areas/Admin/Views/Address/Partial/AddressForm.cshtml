@@ -3,8 +3,8 @@
 <div class="box-body">
     <input type="number" name="ID" value="@Model.ID" hidden/>
     <div class="form-group">
-        <label>AddAddress</label>
-        @Html.TextBoxFor(x => x.AddressContent, new { @class = "form-control", @placeholder = "AddAddress Content" })
+        <label>Address</label>
+        @Html.TextBoxFor(x => x.AddressContent, new { @class = "form-control", @placeholder = "Address Content" })
         @Html.ValidationMessageFor(x => x.AddressContent)
     </div>
     <div class="form-group">
