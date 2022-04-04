@@ -271,5 +271,33 @@ namespace DAL
             cmt.LastUpdateDate = DateTime.Now;
             db.SaveChanges();
         }
+
+        public List<CommentDTO> GetAllComments()
+        {
+            List<CommentDTO> dtolist = new List<CommentDTO>();
+            var list = (from c in db.Comments.Where(x => x.isDeleted == false)
+                join p in db.Posts on c.PostID equals p.ID
+                select new
+                {
+                    ID = c.ID,
+                    PostTitle = p.Title,
+                    Email = c.Email,
+                    Content = c.CommentContent,
+                    AddDate = c.AddDate,
+                    IsApproved = c.isApproved
+                }).OrderBy(x => x.AddDate).ToList();
+            foreach (var item in list)
+            {
+                CommentDTO dto = new CommentDTO();
+                dto.ID = item.ID;
+                dto.PostTitle = item.PostTitle;
+                dto.Email = item.Email;
+                dto.CommentContent = item.Content;
+                dto.AddDate = item.AddDate;
+                dto.isApproved = item.IsApproved;
+                dtolist.Add(dto);
+            }
+            return dtolist;
+        }
     }
 }

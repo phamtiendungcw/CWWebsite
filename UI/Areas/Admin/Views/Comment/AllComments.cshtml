@@ -6,16 +6,16 @@
 @model List<DTO.CommentDTO>
 
 <section class="content-header">
-    <h1>Unapproved Comment List</h1>
+    <h1>All Comment List</h1>
     <ol class="breadcrumb float-sm-left">
         <li class="breadcrumb-item"><a>Admin</a></li>
         <li class="breadcrumb-item"><a>Comment</a></li>
-        <li class="breadcrumb-item active"><a>Unapproved Comment List</a></li>
+        <li class="breadcrumb-item active"><a>All Comment List</a></li>
     </ol>
 </section>
 <br />
 <div class="card-footer">
-    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Comment/AllComments'">All Comments List</button>
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Comment/UnapprovedComments'">Unapproved Comments List</button>
 </div>
 
 <div class="card">
@@ -40,6 +40,19 @@
                         <td>@item.CommentContent</td>
                         <td>@item.Email</td>
                         <td>@item.AddDate.ToString("dd.MM.yyyy")</td>
+                        @if (!item.isApproved)
+                        {
+                            <td align="center" valign="middle">
+                                <a href="/Admin/Comment/ApproveComment1/@item.ID">
+                                    <br />
+                                    <img src="~/Areas/Admin/Content/icons/Approve.ico"/>
+                                </a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>Approved</td>
+                        }
                         <td align="center" valign="middle">
                             <a href="/Admin/Comment/ApproveComment/@item.ID">
                                 <br />

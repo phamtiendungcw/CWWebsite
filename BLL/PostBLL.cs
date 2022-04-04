@@ -158,5 +158,10 @@ namespace BLL
             dao.DeleteComment(ID);
             LogDAO.AddLog(General.ProcessType.CommentDelete, General.TableName.Comment, ID);
         }
+
+        public List<CommentDTO> GetAllComments()
+        {
+            return dao.GetAllComments();
+        }
     }
 }

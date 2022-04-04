@@ -29,8 +29,7 @@ namespace DAL
 
         public List<CategoryDTO> GetCategories()
         {
-            List<Category> list = db.Categories.Where(x => x.isDeleted == false).OrderByDescending(x => x.AddDate)
-                .ToList();
+            List<Category> list = db.Categories.Where(x => x.isDeleted == false).OrderByDescending(x => x.AddDate).ToList();
             List<CategoryDTO> dtoList = new List<CategoryDTO>();
             foreach (var item in list)
             {

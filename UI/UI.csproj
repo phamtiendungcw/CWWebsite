@@ -771,6 +771,7 @@
     <Content Include="Content\scss\widget.scss" />
     <Content Include="Content\toastr\toastr.js.map" />
     <Content Include="Areas\Admin\Views\Comment\UnapprovedComments.cshtml" />
+    <Content Include="Areas\Admin\Views\Comment\AllComments.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\HomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
