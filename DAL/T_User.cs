@@ -22,8 +22,6 @@ namespace DAL
             this.Comments = new HashSet<Comment>();
             this.Contacts = new HashSet<Contact>();
             this.FavLogoTitles = new HashSet<FavLogoTitle>();
-            this.Log_Table = new HashSet<Log_Table>();
-            this.Metas = new HashSet<Meta>();
             this.Posts = new HashSet<Post>();
             this.PostImages = new HashSet<PostImage>();
             this.PostTags = new HashSet<PostTag>();
@@ -50,8 +48,6 @@ namespace DAL
         public virtual ICollection<Comment> Comments { get; set; }
         public virtual ICollection<Contact> Contacts { get; set; }
         public virtual ICollection<FavLogoTitle> FavLogoTitles { get; set; }
-        public virtual ICollection<Log_Table> Log_Table { get; set; }
-        public virtual ICollection<Meta> Metas { get; set; }
         public virtual ICollection<Post> Posts { get; set; }
         public virtual ICollection<PostImage> PostImages { get; set; }
         public virtual ICollection<PostTag> PostTags { get; set; }

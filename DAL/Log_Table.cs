@@ -23,6 +23,5 @@ namespace DAL
         public System.DateTime ProcessDate { get; set; }
     
         public virtual ProcessType ProcessType1 { get; set; }
-        public virtual T_User T_User { get; set; }
     }
 }

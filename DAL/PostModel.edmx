@@ -334,30 +334,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Long_Table_T_User">
-          <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
-          <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T_User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Log_Table">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Meta_T_User">
-          <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
-          <End Role="Meta" Type="Self.Meta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T_User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Meta">
-              <PropertyRef Name="LastUpdateUserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Post_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
           <End Role="Post" Type="Self.Post" Multiplicity="*" />
@@ -503,14 +479,6 @@
             <End Role="ProcessType" EntitySet="ProcessType" />
             <End Role="Log_Table" EntitySet="Log_Table" />
           </AssociationSet>
-          <AssociationSet Name="FK_Long_Table_T_User" Association="Self.FK_Long_Table_T_User">
-            <End Role="T_User" EntitySet="T_User" />
-            <End Role="Log_Table" EntitySet="Log_Table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Meta_T_User" Association="Self.FK_Meta_T_User">
-            <End Role="T_User" EntitySet="T_User" />
-            <End Role="Meta" EntitySet="Meta" />
-          </AssociationSet>
           <AssociationSet Name="FK_Post_Category" Association="Self.FK_Post_Category">
             <End Role="Category" EntitySet="Category" />
             <End Role="Post" EntitySet="Post" />
@@ -614,7 +582,7 @@
           <Property Name="isDeleted" Type="Boolean" Nullable="false" />
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
-          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Post" Relationship="Self.FK_Comment_Post" FromRole="Comment" ToRole="Post" />
           <NavigationProperty Name="T_User" Relationship="Self.FK_Comment_T_User" FromRole="Comment" ToRole="T_User" />
         </EntityType>
@@ -664,7 +632,6 @@
           <Property Name="ProcessCategoryType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ProcessDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="ProcessType1" Relationship="Self.FK_Long_Table_ProcessType" FromRole="Log_Table" ToRole="ProcessType" />
-          <NavigationProperty Name="T_User" Relationship="Self.FK_Long_Table_T_User" FromRole="Log_Table" ToRole="T_User" />
         </EntityType>
         <EntityType Name="Meta">
           <Key>
@@ -678,7 +645,6 @@
           <Property Name="DeletedDate" Type="DateTime" Precision="3" />
           <Property Name="LastUpdateUserID" Type="Int32" Nullable="false" />
           <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
-          <NavigationProperty Name="T_User" Relationship="Self.FK_Meta_T_User" FromRole="Meta" ToRole="T_User" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
@@ -794,8 +760,6 @@
           <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_T_User" FromRole="T_User" ToRole="Comment" />
           <NavigationProperty Name="Contacts" Relationship="Self.FK_Contact_T_User" FromRole="T_User" ToRole="Contact" />
           <NavigationProperty Name="FavLogoTitles" Relationship="Self.FK_FavLogoTitle_T_User" FromRole="T_User" ToRole="FavLogoTitle" />
-          <NavigationProperty Name="Log_Table" Relationship="Self.FK_Long_Table_T_User" FromRole="T_User" ToRole="Log_Table" />
-          <NavigationProperty Name="Metas" Relationship="Self.FK_Meta_T_User" FromRole="T_User" ToRole="Meta" />
           <NavigationProperty Name="Posts" Relationship="Self.FK_Post_T_User" FromRole="T_User" ToRole="Post" />
           <NavigationProperty Name="PostImages" Relationship="Self.FK_PostImage_T_User" FromRole="T_User" ToRole="PostImage" />
           <NavigationProperty Name="PostTags" Relationship="Self.FK_PostTag_T_User" FromRole="T_User" ToRole="PostTag" />
@@ -923,30 +887,6 @@
             </Principal>
             <Dependent Role="Log_Table">
               <PropertyRef Name="ProcessType" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Long_Table_T_User">
-          <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
-          <End Role="Log_Table" Type="Self.Log_Table" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T_User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Log_Table">
-              <PropertyRef Name="UserID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Meta_T_User">
-          <End Role="T_User" Type="Self.T_User" Multiplicity="1" />
-          <End Role="Meta" Type="Self.Meta" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="T_User">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="Meta">
-              <PropertyRef Name="LastUpdateUserID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1086,14 +1026,6 @@
           <AssociationSet Name="FK_Long_Table_ProcessType" Association="Self.FK_Long_Table_ProcessType">
             <End Role="ProcessType" EntitySet="ProcessTypes" />
             <End Role="Log_Table" EntitySet="Log_Table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Long_Table_T_User" Association="Self.FK_Long_Table_T_User">
-            <End Role="T_User" EntitySet="T_User" />
-            <End Role="Log_Table" EntitySet="Log_Table" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Meta_T_User" Association="Self.FK_Meta_T_User">
-            <End Role="T_User" EntitySet="T_User" />
-            <End Role="Meta" EntitySet="Metas" />
           </AssociationSet>
           <AssociationSet Name="FK_Post_T_User" Association="Self.FK_Post_T_User">
             <End Role="T_User" EntitySet="T_User" />
