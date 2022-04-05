@@ -80,9 +80,9 @@ namespace DAL
             }
         }
 
-        public UserDTO GetUserWithID(int id)
+        public UserDTO GetUserWithID(int ID)
         {
-            T_User user = db.T_User.First(x => x.ID == id);
+            T_User user = db.T_User.First(x => x.ID == ID);
             UserDTO dto = new UserDTO();
             dto.ID = user.ID;
             dto.Name = user.NameSurname;

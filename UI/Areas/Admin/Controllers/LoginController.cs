@@ -31,7 +31,7 @@ namespace UI.Areas.Admin.Controllers
                     UserStatic.NameSurname = user.Name;
                     UserStatic.ImagePath = user.ImagePath;
                     LogBLL.AddLog(General.ProcessType.Login, General.TableName.Login, 12);
-                    return RedirectToAction("PostList", "Post");
+                    return RedirectToAction("Index", "Post");
                 }
                 else
                     return View(model);

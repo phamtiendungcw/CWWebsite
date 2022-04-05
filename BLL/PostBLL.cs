@@ -138,6 +138,10 @@ namespace BLL
             comment.Email = model.Email;
             comment.CommentContent = model.Message;
             comment.AddDate = DateTime.Now;
+            comment.LastUpdateUserID = 1;
+            comment.LastUpdateDate = DateTime.Now;
+            comment.isDeleted = false;
+            comment.isApproved = false;
             dao.AddComment(comment);
             return true;
         }

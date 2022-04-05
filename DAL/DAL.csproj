@@ -116,13 +116,13 @@
       <DependentUpon>PostModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="PostModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>PostModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="PostModel.Designer.cs">
-      <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
       <DependentUpon>PostModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="PostTag.cs">
@@ -171,13 +171,13 @@
   <ItemGroup>
     <Content Include="PostModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PostModel.edmx</DependentUpon>
       <LastGenOutput>PostModel.Context.cs</LastGenOutput>
+      <DependentUpon>PostModel.edmx</DependentUpon>
     </Content>
     <Content Include="PostModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PostModel.edmx</DependentUpon>
       <LastGenOutput>PostModel.cs</LastGenOutput>
+      <DependentUpon>PostModel.edmx</DependentUpon>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

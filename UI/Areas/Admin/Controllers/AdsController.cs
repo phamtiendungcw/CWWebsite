@@ -36,7 +36,7 @@ namespace UI.Areas.Admin.Controllers
                 string fileName = "";
                 HttpPostedFileBase postedFile = model.AdsImage;
                 Bitmap UserImage = new Bitmap(postedFile.InputStream);
-                Bitmap resizeImage = new Bitmap(UserImage, 128, 128);
+                Bitmap resizeImage = new Bitmap(UserImage, 500, 500);
                 string ext = Path.GetExtension(postedFile.FileName);
                 if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif")
                 {
@@ -74,7 +74,7 @@ namespace UI.Areas.Admin.Controllers
                     string fileName = "";
                     HttpPostedFileBase postedFile = model.AdsImage;
                     Bitmap UserImage = new Bitmap(postedFile.InputStream);
-                    Bitmap resizeImage = new Bitmap(UserImage, 128, 128);
+                    Bitmap resizeImage = new Bitmap(UserImage, 500, 500);
                     string ext = Path.GetExtension(postedFile.FileName);
                     if (ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif")
                     {
