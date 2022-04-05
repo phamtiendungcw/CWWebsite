@@ -43,7 +43,6 @@
                             <a href="#" class="post-cata cata-sm cata-danger">@Model.PostDetail.CategoryName</a>
                             <a href="#" class="post-cata cata-sm cata-danger">@Model.PostDetail.Language</a>
                             <a href="single-post.html" class="post-title mb-2">@Model.PostDetail.Title</a>
-
                             <div class="d-flex justify-content-between mb-30">
                                 <div class="post-meta d-flex align-items-center">
                                     <a href="#" class="post-author">DungCW</a>
@@ -84,22 +83,18 @@
                                 <a href="#" class="author-name">DungCW</a>
                                 <p>
                                     Hi there,
-
                                     By 2024, there will be more than 1 million unfilled computing jobs and the skills gap is a global problem. This was our starting point.
                                 </p>
                             </div>
                         </div>
 
-                        <!-- Related Post Area -->
                         <!-- Comment Area Start -->
                         <div class="comment_area clearfix mb-50">
-
                             <!-- Section Title -->
                             <div class="section-heading style-2">
                                 <h4>Comment</h4>
                                 <div class="line"></div>
                             </div>
-
                             <ul>
                                 @foreach (var item in Model.PostDetail.CommentList)
                                 {
@@ -111,9 +106,7 @@
                                                 <a href="#" class="comment-date">@item.AddDate.ToString("dddd, dd.MM.yyyy")</a>
                                                 <h6>@item.Name</h6>
                                                 <p>@item.CommentContent</p>
-                                                <div class="d-flex align-items-center">
-
-                                                </div>
+                                                <div class="d-flex align-items-center"></div>
                                             </div>
                                         </div>
                                     </li>
@@ -123,7 +116,6 @@
 
                         <!-- Post A Comment Area -->
                         <div class="post-a-comment-area">
-
                             <!-- Section Title -->
                             <div class="section-heading style-2">
                                 <h4>Leave a reply</h4>
