@@ -164,5 +164,12 @@ namespace UI.Areas.Admin.Controllers
             }
             return Json("");
         }
+
+        public JsonResult GetCounts()
+        {
+            CountDTO dto = new CountDTO();
+            dto = bll.GetCounts();
+            return Json(dto,JsonRequestBehavior.AllowGet);
+        }
     }
 }

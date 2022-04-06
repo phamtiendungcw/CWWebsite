@@ -276,16 +276,16 @@ namespace DAL
         {
             List<CommentDTO> dtolist = new List<CommentDTO>();
             var list = (from c in db.Comments.Where(x => x.isDeleted == false)
-                join p in db.Posts on c.PostID equals p.ID
-                select new
-                {
-                    ID = c.ID,
-                    PostTitle = p.Title,
-                    Email = c.Email,
-                    Content = c.CommentContent,
-                    AddDate = c.AddDate,
-                    IsApproved = c.isApproved
-                }).OrderBy(x => x.AddDate).ToList();
+                        join p in db.Posts on c.PostID equals p.ID
+                        select new
+                        {
+                            ID = c.ID,
+                            PostTitle = p.Title,
+                            Email = c.Email,
+                            Content = c.CommentContent,
+                            AddDate = c.AddDate,
+                            IsApproved = c.isApproved
+                        }).OrderBy(x => x.AddDate).ToList();
             foreach (var item in list)
             {
                 CommentDTO dto = new CommentDTO();
@@ -298,6 +298,16 @@ namespace DAL
                 dtolist.Add(dto);
             }
             return dtolist;
+        }
+
+        public int GetMessageCount()
+        {
+            return db.Contacts.Where(x => x.isDeleted == false && x.isRead == false).Count();
+        }
+
+        public int GetCommentCount()
+        {
+            return db.Comments.Where(x => x.isDeleted == false && x.isApproved == false).Count();
         }
     }
 }

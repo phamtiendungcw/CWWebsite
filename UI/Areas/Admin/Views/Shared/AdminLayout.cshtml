@@ -24,23 +24,18 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Comment/UnapprovedComments">
                         <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
+                        <span class="badge badge-danger navbar-badge" id="CommentCount"></span>
                     </a>
                 </li>
                 <!-- Notifications Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Admin/Contact/UnreadMessages">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
+                        <span class="badge badge-warning navbar-badge" id="MessageCount"></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <div class="dropdown-divider"></div>
-                    </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -410,22 +405,45 @@
     <!-- AdminLTE for demo purposes -->
     <script src="~/Areas/Admin/Content/JS/demo.js"></script>
     <script>
-        $(function () {
-            $("#example1").DataTable({
-                "responsive": true,
-                "autoWidth": false,
-                "ordering": false
-            });
-            $('#example2').DataTable({
-                "paging": true,
-                "lengthChange": false,
-                "searching": false,
-                "ordering": true,
-                "info": true,
-                "autoWidth": false,
-                "responsive": true
-            });
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true,
+            "autoWidth": false,
+            "ordering": false
         });
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    jQuery(document).ready(function () {
+        GetCounts();
+    });
+    </script>
+    <script type="text/javascript">
+    setInterval(function () {
+        GetCounts();
+    }, 10000);
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function () { });
+    function GetCounts() {
+        $.ajax({
+            url: "@Url.Action("GetCounts","Post")",
+            type: "POST",
+            success: function (result) {
+                $("#CommentCount").html(result.CommentCount);
+                $("#MessageCount").html(result.MessageCount);
+            }
+        });
+    }
     </script>
 </body>
 </html>
