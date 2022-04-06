@@ -23,5 +23,27 @@ namespace BLL
             dao.AddContact(contact);
             return true;
         }
+
+        public List<ContactDTO> GetUnreadMessages()
+        {
+            return dao.GetUnreadMessages();
+        }
+
+        public void ReadMessage(int ID)
+        {
+            dao.ReadMessage(ID);
+            LogDAO.AddLog(General.ProcessType.ContactRead, General.TableName.Contact, ID);
+        }
+
+        public void DeleteMessage(int ID)
+        {
+            dao.DeleteMessage(ID);
+            LogDAO.AddLog(General.ProcessType.ContactDelete, General.TableName.Contact, ID);
+        }
+
+        public List<ContactDTO> GetAllMessages()
+        {
+            return dao.GetAllMessages();
+        }
     }
 }

@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "AllMessages";
+    Layout = "~/Areas/Admin/Views/Shared/AdminLayout.cshtml";
+}
+
+@model List<DTO.ContactDTO>
+
+<section class="content-header">
+    <h1>All Messages</h1>
+    <ol class="breadcrumb float-sm-left">
+        <li class="breadcrumb-item"><a>Admin</a></li>
+        <li class="breadcrumb-item"><a>Contact</a></li>
+        <li class="breadcrumb-item active"><a>All Messages</a></li>
+    </ol>
+</section>
+<br />
+<div class="card-footer">
+    <button type="submit" class="btn btn-primary" onclick="window.location.href='/Admin/Contact/UnreadMessages'">Unread Messages</button>
+</div>
+
+<div class="card">
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Add Date</th>
+                <th>Read</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                <tr id="a_@item.ID">
+                    <td>@item.Subject</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Message</td>
+                    <td>@item.AddDate.ToString("dd.MM.yyyy")</td>
+                    @if (!item.isRead)
+                    {
+                        <td align="center" valign="middle">
+                            <a href="/Admin/Contact/ReadMessage1/@item.ID">
+                                <br />
+                                <img src="~/Areas/Admin/Content/icons/Read.ico" />
+                            </a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td>Read</td>
+                    }
+                    <td align="center" valign="middle">
+                        <a href="#">
+                            <br />
+                            <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Contact/DeleteMessage/', @item.ID)" />
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            }
+            <tfoot>
+            <tr>
+                <th>Subject</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Add Date</th>
+                <th>Read</th>
+                <th>Delete</th>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+    @Html.Partial("~/Areas/Admin/Views/Shared/ModelMessage.cshtml")
+    <!-- /.card-body -->
+</div>
+<!-- /.card -->
+<script src="~/Areas/Admin/Content/JS/DeleteRecord.js"></script>

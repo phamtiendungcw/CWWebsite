@@ -96,6 +96,7 @@
     <Content Include="Areas\Admin\Content\CSS\responsive.bootstrap4.min.css" />
     <Content Include="Areas\Admin\Content\icons\Approve.ico" />
     <Content Include="Areas\Admin\Content\icons\Delete.ico" />
+    <Content Include="Areas\Admin\Content\icons\Read.ico" />
     <Content Include="Areas\Admin\Content\icons\Update.ico" />
     <Content Include="Areas\Admin\Content\JS\adminlte.min.js" />
     <Content Include="Areas\Admin\Content\JS\bootstrap.bundle.min.js" />
@@ -637,6 +638,7 @@
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\CommentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\FavController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MetaController.cs" />
@@ -772,6 +774,8 @@
     <Content Include="Content\toastr\toastr.js.map" />
     <Content Include="Areas\Admin\Views\Comment\UnapprovedComments.cshtml" />
     <Content Include="Areas\Admin\Views\Comment\AllComments.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\UnreadMessages.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\AllMessages.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\HomeLayout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
