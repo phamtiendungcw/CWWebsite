@@ -30,7 +30,9 @@ namespace UI.Controllers
             HomeLayoutDTO layoutdto = new HomeLayoutDTO();
             layoutdto = layoutbll.GetLayoutData();
             ViewData["LayoutDTO"] = layoutdto;
-            return View();
+            GeneralDTO dto = new GeneralDTO();
+            dto = bll.GetCategoryPostList(CategoryName);
+            return View(dto);
         }
 
         public ActionResult PostDetail(int ID)
