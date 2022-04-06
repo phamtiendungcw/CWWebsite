@@ -13,6 +13,7 @@ namespace BLL
         private GeneralDAO dao = new GeneralDAO();
         private AdsDAO adsdao = new AdsDAO();
         private CategoryDAO categorydao = new CategoryDAO();
+        private AddressDAO addressdao = new AddressDAO();
         public GeneralDTO GetAllPosts()
         {
             GeneralDTO dto = new GeneralDTO();
@@ -42,7 +43,7 @@ namespace BLL
             if (categoryName == "video")
             {
                 dto.Videos = dao.GetAllVideos();
-                dto.CategoryName = "video";
+                dto.CategoryName = "Video";
             }
             else
             {
@@ -59,6 +60,15 @@ namespace BLL
                 }
                 dto.CategoryPostList = dao.GetCategoryPostList(categoryID);
             }
+            return dto;
+        }
+
+        public GeneralDTO GetContactPageItems()
+        {
+            GeneralDTO dto = new GeneralDTO();
+            dto.BreakingPost = dao.GetBreakingPosts();
+            dto.AdsList = adsdao.GetAds();
+            dto.Address = addressdao.GetAddresses().First();
             return dto;
         }
     }

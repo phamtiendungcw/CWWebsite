@@ -14,6 +14,7 @@ namespace UI.Controllers
         private LayoutBLL layoutbll = new LayoutBLL();
         private GeneralBLL bll = new GeneralBLL();
         private PostBLL postbll = new PostBLL();
+        private ContactBLL contactbll = new ContactBLL();
 
         public ActionResult Index()
         {
@@ -68,6 +69,44 @@ namespace UI.Controllers
             GeneralDTO dto = new GeneralDTO();
             model = bll.GetPostDetailPageItemsWithID(model.PostID);
             return View(model);
+        }
+
+        [Route("contactus")]
+        public ActionResult ContactUs()
+        {
+            HomeLayoutDTO layoutdto = new HomeLayoutDTO();
+            layoutdto = layoutbll.GetLayoutData();
+            ViewData["LayoutDTO"] = layoutdto;
+            GeneralDTO dto = new GeneralDTO();
+            dto = bll.GetContactPageItems();
+            return View(dto);
+        }
+
+        [Route("contactus")]
+        [HttpPost]
+        public ActionResult ContactUs(GeneralDTO model)
+        {
+            if (model.Name != null && model.Subject != null && model.Email != null && model.Message != null)
+            {
+                if (contactbll.AddContact(model))
+                {
+                    ViewData["CommentState"] = "Success";
+                }
+                else
+                {
+                    ViewData["CommentState"] = "Error";
+                }
+            }
+            else
+            {
+                ViewData["CommentState"] = "Error";
+            }
+            HomeLayoutDTO layoutdto = new HomeLayoutDTO();
+            layoutdto = layoutbll.GetLayoutData();
+            ViewData["LayoutDTO"] = layoutdto;
+            GeneralDTO dto = new GeneralDTO();
+            dto = bll.GetContactPageItems();
+            return View(dto);
         }
     }
 }

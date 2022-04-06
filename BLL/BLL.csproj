@@ -66,6 +66,7 @@
     <Compile Include="AddressBLL.cs" />
     <Compile Include="AdsBLL.cs" />
     <Compile Include="CategoryBLL.cs" />
+    <Compile Include="ContactBLL.cs" />
     <Compile Include="FavBLL.cs" />
     <Compile Include="General.cs" />
     <Compile Include="GeneralBLL.cs" />
