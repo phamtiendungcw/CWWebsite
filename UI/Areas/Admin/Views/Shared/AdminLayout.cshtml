@@ -86,7 +86,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Meta -->
-                        <li class="nav-item">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -117,7 +117,7 @@
                         </li>
 
                         <!-- Address -->
-                        <li class="nav-item">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -142,7 +142,7 @@
                         </li>
 
                         <!-- Social Media -->
-                        <li class="nav-item">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -167,7 +167,7 @@
                         </li>
 
                         <!-- Ads -->
-                        <li class="nav-item">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -192,7 +192,7 @@
                         </li>
 
                         <!-- Category -->
-                        <li class="nav-item">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -217,7 +217,7 @@
                         </li>
 
                         <!-- Post -->
-                        <li class="nav-item">
+                        <li class="nav-item has-treeview">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
@@ -242,7 +242,7 @@
                         </li>
 
                         <!-- Video -->
-                    <li class="nav-item">
+                    <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
@@ -267,7 +267,7 @@
                     </li>
 
                     <!--Comment-->
-                    <li class="nav-item">
+                    <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
@@ -292,7 +292,7 @@
                     </li>
 
                     <!--Contact-->
-                    <li class="nav-item">
+                    <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
@@ -316,9 +316,28 @@
                         </ul>
                     </li>
 
+                    <!--Log-->
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-book"></i>
+                            <p>
+                                Log
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/Admin/Log/LogList" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Log List</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
                     @if (UserStatic.IsAdmin)
                         {
-                            <li class="nav-item">
+                            <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
@@ -344,7 +363,7 @@
                         }
                         else
                         {
-                            <li class="nav-item">
+                            <li class="nav-item has-treeview">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-book"></i>
                                     <p>
