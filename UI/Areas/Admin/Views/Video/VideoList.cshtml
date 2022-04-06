@@ -31,9 +31,9 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            @foreach (var item in Model)
-            {
-                <tbody>
+            <tbody>
+                @foreach (var item in Model)
+                {
                     <tr id="a_@item.ID">
                         <td>@item.Title</td>
                         <td>@item.OriginalVideoPath</td>
@@ -48,8 +48,8 @@
                             </a>
                         </td>
                     </tr>
-                </tbody>
-            }
+                }
+            </tbody>
             <tfoot>
                 <tr>
                     <th>Title</th>

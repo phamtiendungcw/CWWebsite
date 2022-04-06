@@ -35,23 +35,23 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                        <tr id="a_@item.ID">
-                            <td>@item.Title</td>
-                            <td>@item.CategoryName</td>
-                            <td>
-                                @item.AddDate.ToString("dddd, dd.MM.yyyy")
-                            </td>
-                            <td align="center" valign="middle">
-                                <a href="/Admin/Post/UpdatePost/@item.ID">
-                                    <img src="~/Areas/Admin/Content/icons/Update.ico" />
-                                </a>
-                            </td>
-                            <td align="center" valign="middle">
-                                <a href="#">
-                                    <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Post/DeletePost/',@item.ID)" />
-                                </a>
-                            </td>
-                        </tr>
+                    <tr id="a_@item.ID">
+                        <td>@item.Title</td>
+                        <td>@item.CategoryName</td>
+                        <td>
+                            @item.AddDate.ToString("dddd, dd.MM.yyyy")
+                        </td>
+                        <td align="center" valign="middle">
+                            <a href="/Admin/Post/UpdatePost/@item.ID">
+                                <img src="~/Areas/Admin/Content/icons/Update.ico" />
+                            </a>
+                        </td>
+                        <td align="center" valign="middle">
+                            <a href="#">
+                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Post/DeletePost/',@item.ID)" />
+                            </a>
+                        </td>
+                    </tr>
                 }
             </tbody>
             <tfoot>

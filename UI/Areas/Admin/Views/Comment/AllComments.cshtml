@@ -32,9 +32,9 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            @foreach (var item in Model)
-            {
-                <tbody>
+            <tbody>
+                @foreach (var item in Model)
+                {
                     <tr id="a_@item.ID">
                         <td>@item.PostTitle</td>
                         <td>@item.CommentContent</td>
@@ -66,8 +66,8 @@
                             </a>
                         </td>
                     </tr>
-                </tbody>
-            }
+                }
+            </tbody>
             <tfoot>
                 <tr>
                     <th>Post Title</th>

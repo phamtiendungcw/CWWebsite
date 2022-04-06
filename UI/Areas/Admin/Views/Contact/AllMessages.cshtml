@@ -34,37 +34,37 @@
                 <th>Delete</th>
             </tr>
             </thead>
-            @foreach (var item in Model)
-            {
-                <tbody>
-                <tr id="a_@item.ID">
-                    <td>@item.Subject</td>
-                    <td>@item.Name</td>
-                    <td>@item.Email</td>
-                    <td>@item.Message</td>
-                    <td>@item.AddDate.ToString("dd.MM.yyyy")</td>
-                    @if (!item.isRead)
-                    {
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="a_@item.ID">
+                        <td>@item.Subject</td>
+                        <td>@item.Name</td>
+                        <td>@item.Email</td>
+                        <td>@item.Message</td>
+                        <td>@item.AddDate.ToString("dd.MM.yyyy")</td>
+                        @if (!item.isRead)
+                        {
+                            <td align="center" valign="middle">
+                                <a href="/Admin/Contact/ReadMessage1/@item.ID">
+                                    <br />
+                                    <img src="~/Areas/Admin/Content/icons/Read.ico" />
+                                </a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td>Read</td>
+                        }
                         <td align="center" valign="middle">
-                            <a href="/Admin/Contact/ReadMessage1/@item.ID">
+                            <a href="#">
                                 <br />
-                                <img src="~/Areas/Admin/Content/icons/Read.ico" />
+                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Contact/DeleteMessage/', @item.ID)" />
                             </a>
                         </td>
-                    }
-                    else
-                    {
-                        <td>Read</td>
-                    }
-                    <td align="center" valign="middle">
-                        <a href="#">
-                            <br />
-                            <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Contact/DeleteMessage/', @item.ID)" />
-                        </a>
-                    </td>
-                </tr>
-                </tbody>
-            }
+                    </tr>
+                }
+            </tbody>
             <tfoot>
             <tr>
                 <th>Subject</th>

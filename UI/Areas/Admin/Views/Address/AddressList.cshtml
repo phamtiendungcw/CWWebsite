@@ -32,25 +32,25 @@
                     <th>Delete</th>
                 </tr>
             </thead>
-            @foreach (var item in Model)
-            {
-                <tbody>
-                    <tr id="a_@item.ID">
-                        <td>@item.AddressContent</td>
-                        <td>@item.Phone</td>
-                        <td align="center" valign="middle">
-                            <a href="/Admin/Address/UpdateAddress/@item.ID">
-                                <img src="~/Areas/Admin/Content/icons/Update.ico" />
-                            </a>
-                        </td>
-                        <td align="center" valign="middle">
-                            <a href="#">
-                                <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Address/DeleteAddress/',@item.ID)" />
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            }
+            <tbody>
+                @foreach (var item in Model)
+                {
+                        <tr id="a_@item.ID">
+                            <td>@item.AddressContent</td>
+                            <td>@item.Phone</td>
+                            <td align="center" valign="middle">
+                                <a href="/Admin/Address/UpdateAddress/@item.ID">
+                                    <img src="~/Areas/Admin/Content/icons/Update.ico" />
+                                </a>
+                            </td>
+                            <td align="center" valign="middle">
+                                <a href="#">
+                                    <img src="~/Areas/Admin/Content/icons/Delete.ico" onclick="AskQuestion('/Admin/Address/DeleteAddress/',@item.ID)" />
+                                </a>
+                            </td>
+                        </tr>
+                }
+            </tbody>
             <tfoot>
                 <tr>
                     <th>Address</th>
