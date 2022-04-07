@@ -108,5 +108,17 @@ namespace UI.Controllers
             dto = bll.GetContactPageItems();
             return View(dto);
         }
+
+        [Route("search")]
+        [HttpPost]
+        public ActionResult Search(GeneralDTO model)
+        {
+            HomeLayoutDTO layoutdto = new HomeLayoutDTO();
+            layoutdto = layoutbll.GetLayoutData();
+            ViewData["LayoutDTO"] = layoutdto;
+            GeneralDTO dto = new GeneralDTO();
+            dto = bll.GetSearchPosts(model.SearchText);
+            return View(dto);
+        }
     }
 }

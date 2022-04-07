@@ -784,6 +784,7 @@
     <Content Include="Views\Home\CategoryPostList.cshtml" />
     <Content Include="Views\Home\PostDetail.cshtml" />
     <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

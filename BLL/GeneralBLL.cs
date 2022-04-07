@@ -71,5 +71,15 @@ namespace BLL
             dto.Address = addressdao.GetAddresses().First();
             return dto;
         }
+
+        public GeneralDTO GetSearchPosts(string searchText)
+        {
+            GeneralDTO dto = new GeneralDTO();
+            dto.BreakingPost = dao.GetBreakingPosts();
+            dto.AdsList = adsdao.GetAds();
+            dto.CategoryPostList = dao.GetSearchPost(searchText);
+            dto.SearchText = searchText;
+            return dto;
+        }
     }
 }

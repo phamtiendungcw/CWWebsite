@@ -19,6 +19,7 @@ namespace DTO
         public string Email { get; set; }
         public string Message { get; set; }
         public string Subject { get; set; }
+        public string SearchText { get; set; }
         public int PostID { get; set; }
         public List<PostDTO> CategoryPostList { get; set; }
         public string CategoryName { get; set; }
