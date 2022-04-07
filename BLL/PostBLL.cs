@@ -175,5 +175,10 @@ namespace BLL
             dto.CommentCount = dao.GetCommentCount();
             return dto;
         }
+
+        public CountDTO GetAllCount()
+        {
+            return dao.GetAllCounts();
+        }
     }
 }

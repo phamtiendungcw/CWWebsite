@@ -309,5 +309,15 @@ namespace DAL
         {
             return db.Comments.Where(x => x.isDeleted == false && x.isApproved == false).Count();
         }
+
+        public CountDTO GetAllCounts()
+        {
+            CountDTO dto = new CountDTO();
+            dto.PostCount = db.Posts.Where(x => x.isDeleted == false).Count();
+            dto.CommentCount = db.Comments.Where(x => x.isDeleted == false).Count();
+            dto.MessageCount = db.Contacts.Where(x => x.isDeleted == false).Count();
+            dto.ViewCount = db.Posts.Where(x => x.isDeleted == false).Sum(x => x.ViewCount);
+            return dto;
+        }
     }
 }

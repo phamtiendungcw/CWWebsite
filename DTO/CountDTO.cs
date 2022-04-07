@@ -10,5 +10,7 @@ namespace DTO
     {
         public int MessageCount { get; set; }
         public int CommentCount { get; set; }
+        public int PostCount { get; set; }
+        public int ViewCount { get; set; }
     }
 }
