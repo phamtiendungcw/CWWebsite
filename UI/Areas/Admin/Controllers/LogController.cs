@@ -11,11 +11,6 @@ namespace UI.Areas.Admin.Controllers
     public class LogController : Controller
     {
         // GET: Admin/Log
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         private LogBLL bll = new LogBLL();
         public ActionResult LogList()
         {
