@@ -120,13 +120,13 @@
       <DependentUpon>PostModel.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="PostModel.cs">
-      <DependentUpon>PostModel.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PostModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PostModel.Designer.cs">
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>PostModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="PostTag.cs">
@@ -192,13 +192,13 @@
     </Content>
     <Content Include="PostModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PostModel.Context.cs</LastGenOutput>
       <DependentUpon>PostModel.edmx</DependentUpon>
+      <LastGenOutput>PostModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="PostModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>PostModel.cs</LastGenOutput>
       <DependentUpon>PostModel.edmx</DependentUpon>
+      <LastGenOutput>PostModel.cs</LastGenOutput>
     </Content>
     <Content Include="SqlServerTypes\readme.htm" />
   </ItemGroup>
