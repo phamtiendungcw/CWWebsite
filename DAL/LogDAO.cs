@@ -28,18 +28,18 @@ namespace DAL
         {
             List<LogDTO> dtoList = new List<LogDTO>();
             var list = (from l in db.Log_Table
-                join u in db.T_User on l.UserID equals u.ID
-                join p in db.ProcessTypes on l.ProcessType equals p.ID
-                select new
-                {
-                    ID = l.ID,
-                    UserName = u.Username,
-                    TableName = l.ProcessCategoryType,
-                    TableID = l.ProcessID,
-                    ProcessName = p.ProcessName,
-                    ProcessDate = l.ProcessDate,
-                    IPAddress = l.IPAddress
-                }).OrderByDescending(x => x.ProcessDate).ToList();
+                        join u in db.T_User on l.UserID equals u.ID
+                        join p in db.ProcessTypes on l.ProcessType equals p.ID
+                        select new
+                        {
+                            ID = l.ID,
+                            UserName = u.Username,
+                            TableName = l.ProcessCategoryType,
+                            TableID = l.ProcessID,
+                            ProcessName = p.ProcessName,
+                            ProcessDate = l.ProcessDate,
+                            IPAddress = l.IPAddress
+                        }).OrderByDescending(x => x.ProcessDate).ToList();
             foreach (var item in list)
             {
                 LogDTO dto = new LogDTO();
