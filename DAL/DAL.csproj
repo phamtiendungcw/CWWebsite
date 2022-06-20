@@ -192,8 +192,8 @@
     </Content>
     <Content Include="PostModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PostModel.edmx</DependentUpon>
       <LastGenOutput>PostModel.Context.cs</LastGenOutput>
+      <DependentUpon>PostModel.edmx</DependentUpon>
     </Content>
     <Content Include="PostModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
