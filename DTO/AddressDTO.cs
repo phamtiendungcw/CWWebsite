@@ -10,17 +10,17 @@ namespace DTO
     public class AddressDTO
     {
         public int ID { get; set; }
-        [Required(ErrorMessage ="Hãy nhập mục address!")]
+        [Required(ErrorMessage = "Hãy nhập mục address!")]
         public string AddressContent { get; set; }
-        [Required(ErrorMessage ="Hãy nhập mục email!")]
+        [Required(ErrorMessage = "Hãy nhập mục email!")]
         public string Email { get; set; }
-        [Required(ErrorMessage ="Hãy nhập mục phone!")]
+        [Required(ErrorMessage = "Hãy nhập mục phone!")]
         public string Phone { get; set; }
         public string Phone2 { get; set; }
         public string Fax { get; set; }
-        [Required(ErrorMessage ="Hãy nhập mục large map!")]
+        [Required(ErrorMessage = "Hãy nhập mục large map!")]
         public string LargeMapPath { get; set; }
-        [Required(ErrorMessage ="Hãy nhập mục small map!")]
+        [Required(ErrorMessage = "Hãy nhập mục small map!")]
         public string SmallMapPath { get; set; }
     }
 }
